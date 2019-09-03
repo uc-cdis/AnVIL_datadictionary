@@ -32,7 +32,7 @@ links:
 required:
   - type
   - submitter_id
-  - studies 
+  - families 
 
 uniqueKeys:
   - [id]
