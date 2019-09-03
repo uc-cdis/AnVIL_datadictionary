@@ -1,0 +1,20 @@
+language: python
+python:
+- '2.7'
+before_script:
+- yes | python setup.py install
+- git clone https://github.com/uc-cdis/dictionaryutils; cd dictionaryutils
+script:
+- "./run_tests.sh"
+deploy:
+  provider: s3
+  access_key_id: AKIAZRNPHKJIDJYAJIUZ
+  bucket: dictionary-artifacts
+  local-dir: artifacts
+  upload-dir: anvil/$TRAVIS_BRANCH
+  skip_cleanup: true
+  on:
+    repo: uc-cdis/AnVIL_datadictionary
+    all_branches: true
+  secret_access_key:
+    secure: EUXS9D/IGwhl+Zz+jRBp4sBThmfRIL5PL+nE7qkFaz/kHA2Px/cepmAGGDokwdqiOKfyAZOazMGdyOuUj96NzoivyQ3xp7VkTEkBNp6Ly3J2VxP9F65wm6G3insoOJ3FI4xmgEgO5Jv5BegJhZFCFist9tiOZ7D3bgwQsnk5PqlOnsLOLu1LTIgjudmddVrh9/J1mAMAfjVv9QOJ8GWewmk+Yhri+/JNVLhUf2QDRRt2Wn0TOyg0eajMMvTabt3RYdPx9HnNRpBwdecfFWR4QIGgDi4ABwlRbYi9rn4mz3ewC6xUubrlmV7WkjTL+hyFGl9Aa3ce0cxpJoD8T5GBFdOnExVCcMRlhMOEy6Bl9xmvqHUoKC1brPkrUNjXw6kt70WJfzFCC7ggn03QHVNPAXrn2iQG36rcgazKZSDGyKUMpYkFu3njRh4K7+up11lFQsM0CQGANWMwQ+IDartgvL5pfT5VO63pPUlsmQ//WlSYfUAqStJUxmxkX3+tBcpGhJDIfRC+o88LrugC3nx77RyUMbiLbutWmQ4L7qWNziaO84lZHucLeGG2VEwuxX1EFb6uIxD9ZRhrtSfRdu77cG0PYi3tROfLHkJ9fND9cKixQq124IrxQhc+U6wvCUuJP0TAmz9FTvKyV43Jq8YDrGUEXRNFPPmoQxxGk5GaNtk=
