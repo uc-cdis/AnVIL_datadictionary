@@ -900,6 +900,10 @@ is_ffpe:
 is_paired_end: # TOREVIEW
   description: >
     Are the reads paired end?
+    
+is_proband: # TOREVIEW
+  description: >
+    Boolean value to determine if the case is the proband.
 
 last_known_disease_status:
   description: >
@@ -1404,6 +1408,17 @@ relationship_age_at_diagnosis:
     cde_id: 5300571
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5300571&version=1.0"
+
+relationship_to_proband:
+  description: >
+    The subgroup that describes the state of connectedness between members of the unit of society
+    organized around kinship ties.
+  termDef:
+    term: Family Member Relationship Type
+    source: caDSR
+    cde_id: 2690165
+    cde_version: 2.0
+    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2690165&version=2.0"
 
 relationship_type:
   description: >

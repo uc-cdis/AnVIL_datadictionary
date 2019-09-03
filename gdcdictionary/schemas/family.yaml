@@ -1,0 +1,67 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "family"
+title: Family
+type: object
+namespace: https://genomel.bionimbus.org/
+category: clinical
+program: '*'
+project: '*'
+description: >
+  Collection of all data related to the family members and their relationships.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: studies
+    backref: families
+    label: member_of
+    target_type: study
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - type
+  - submitter_id
+  - studies
+
+uniqueKeys:
+  #unclear if want submitter ID for clinical
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    enum: [ "family" ]
+
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type:
+      - string
+      - "null"
+
+  studies:
+    $ref: "_definitions.yaml#/to_many"
+
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
