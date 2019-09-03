@@ -54,8 +54,8 @@ properties:
       - string
       - "null"
 
-  projects:
-    $ref: "_definitions.yaml#/to_one_project"
+  studies:
+    $ref: "_definitions.yaml#/to_many"
 
   project_id:
     $ref: "_definitions.yaml#/project_id"
