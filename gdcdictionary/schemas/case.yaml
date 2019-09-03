@@ -22,11 +22,11 @@ systemProperties:
   - state
 
 links:
-  - name: studies 
+  - name: families 
     backref: cases
     label: member_of
-    target_type: study
-    multiplicity: many_to_many
+    target_type: family
+    multiplicity: many_to_one
     required: true
 
 required:
@@ -170,6 +170,16 @@ properties:
   unit_site:
     description: >
       harmonization unit for site
+    type: string
+
+  is_proband:
+    term:
+      $ref: "_terms.yaml#/is_proband"
+    type: boolean
+    
+  relationship_to_proband:
+    term:
+      $ref: "_terms.yaml#/relationship_to_proband"
     type: string
 
   studies:
