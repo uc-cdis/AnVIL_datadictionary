@@ -182,5 +182,5 @@ properties:
       $ref: "_terms.yaml#/relationship_to_proband"
     type: string
 
-  studies:
-    $ref: "_definitions.yaml#/to_many"
+  families: 
+    $ref: "_definitions.yaml#/to_one"
