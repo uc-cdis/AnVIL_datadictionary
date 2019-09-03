@@ -1,0 +1,276 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "demographic"
+title: Demographic
+type: object
+namespace: https://dcp.bionimbus.org/
+category: clinical
+program: '*'
+project: '*'
+description: >
+  Data for the characterization of the patient by means of segementing the population (e.g.,
+  characterization by age, sex, or race).
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: cases
+    backref: demographics
+    label: describes
+    target_type: case
+    multiplicity: one_to_one
+    required: true
+
+required:
+  - type
+  - submitter_id
+  - cases
+
+uniqueKeys:
+  #unclear if want submitter ID for clinical
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+# HARMONIZED VARIABLES ACROSS GTEX AND TOPMED PROJECTS
+  age_at_index:
+    description: >
+      The subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED). If age is greater than 89 years, see 'age_at_index_gt89'.
+    type: number
+    maximum: 89
+    minimum: 0
+
+  age_at_index_gt89:
+    description: >
+      Indicate whether the subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED) is greater than 89 years.
+    enum:
+      - "Yes"
+      - "No"
+
+  gender:
+    term:
+      $ref: "_terms.yaml#/gender"
+    enum:
+      - female
+      - male
+      - unknown
+      - unspecified
+      - not reported
+
+  race:
+    term:
+      $ref: "_terms.yaml#/race"
+    enum:
+      - "white"
+      - "american indian or alaska native"
+      - "black or african american"
+      - "asian"
+      - "native hawaiian or other pacific islander"
+      - "hispanic"
+      - "multiple"
+      - "other"
+      - "Unknown"
+      - "not reported"
+      - "not allowed to collect"
+
+  ethnicity:
+    term:
+      $ref: "_terms.yaml#/ethnicity"
+    enum:
+      - "hispanic or latino"
+      - "inconsistent/contradictory"
+      - "not hispanic or latino"
+      - "Unknown"
+      - "not reported"
+      - "not allowed to collect"
+
+  weight:
+    term:
+      $ref: "_terms.yaml#/weight"
+    type: number
+
+  bmi:
+    term:
+      $ref: "_terms.yaml#/bmi"
+    type: number
+
+  height:
+    term:
+      $ref: "_terms.yaml#/height"
+    type: number
+
+# OTHER NON HARMONIZED VARIABLES FROM GTEX AND TOPMED
+  age_range:
+    description: >
+        Range of ages for the subject. The range should not include ages over 89 years.
+    type: string
+
+  year_of_birth:
+    term:
+      $ref: "_terms.yaml#/year_of_birth"
+    type:
+      - number
+      - "null"
+
+  year_of_death:
+    term:
+      $ref: "_terms.yaml#/year_of_death"
+    type: number
+
+  weight_protocol_modification:
+    description: >
+      Weight, protocol modification
+    type: boolean
+
+  height_protocol_modification:
+    description: >
+      Height, protocol modification
+    type: boolean
+
+  girth_protocol_modification:
+    description: >
+      Girth, protocol modification
+    type: boolean
+
+  hip_circumference:
+    description: >
+      Hip circumference (cm)
+    type: number
+
+  bmi_category:
+    description: >
+      Body mass index, who categories
+    enum:
+      - "NORMAL"
+      - "GRADE 1 OVERWEIGHT"
+      - "GRADE 2 OVERWEIGHT"
+      - "GRADE 3 OVERWEIGHT"
+
+  bsa:
+    description: >
+      Body surface area
+    type: number
+
+  waist:
+    description: >
+      Waist circumference (cm)
+    type: number
+
+  age_at_height_baseline:
+    description: >
+      age at measurement of height_baseline (years)
+    type: number
+
+  unit_height_baseline:
+    description: >
+      harmonization unit for height_baseline
+    type: string
+
+  unit_race:
+    description: >
+      harmonization unit for race
+    type: string
+
+  unit_ethnicity:
+    description: >
+      harmonization unit for ethnicity
+    type: string
+  
+  hispanic_subgroup:
+    description: >
+      classification of Hispanic/Latino background for Hispanic/Latino subjects where country or region of origin information is available
+    enum:
+      - "CentralAmerican"
+      - "CostaRican"
+      - "Cuban"
+      - "Dominican"
+      - "Mexican"
+      - "PuertoRican"
+      - "SouthAmerican"
+
+  unit_hispanic_subgroup:
+    description: >
+      harmonization unit for hispanic_subgroup
+    type: string
+
+  age_at_bmi:
+    description: >
+      age at measurement of bmi (years)
+    type: number
+
+  age_at_weight_baseline:
+    description: >
+      age at measurement of weight_baseline (years)
+    type: number
+
+  subcohort:
+    description: >
+      A distinct subgroup within a study, generally indicating subjects who share similar characteristics due to study design. Subjects may belong to only one subcohort.
+    enum:
+      - "Amish_HAPI"
+      - "Amish_Longevity"
+      - "Amish_Wellness"
+      - "ARIC_NoSubcohortStructure"
+      - "CARDIA_NoSubcohortStructure"
+      - "CFS_NoSubcohortStructure"
+      - "CHS_AfricanAmerican"
+      - "CHS_Original"
+      - "COPDGene_NoSubcohortStructure"
+      - "CRA_NoSubcohortStructure"
+      - "FHS_Gen3"
+      - "FHS_NewOffspringSpouse"
+      - "FHS_Offspring"
+      - "FHS_Omni1"
+      - "FHS_Omni2"
+      - "FHS_Original"
+      - "GENOA_AfricanAmerican"
+      - "GENOA_EuropeanAmerican"
+      - "GOLDN_NoSubcohortStructure"
+      - "HCHS_SOL_NoSubcohortStructure"
+      - "HVH_NoSubcohortStructure"
+      - "JHS_NoSubcohortStructure"
+      - "Mayo_VTE_GENEVA"
+      - "MESA_AirNR"
+      - "MESA_Classic"
+      - "MESA_Family"
+      - "SAS_NoSubcohortStructure"
+      - "WHI_ClinicalTrial"
+      - "WHI_ObservationalStudy"
+
+  unit_annotated_gender:
+    description: >
+      harmonization unit for annotated_gender
+    type: string
+
+  unit_bmi_baseline:
+    description: >
+      harmonization unit for bmi_baseline
+    type: string
+
+  unit_subcohort:
+    description: >
+      harmonization unit for subcohort
+    type: string
+
+  unit_weight_baseline:
+    description: >
+      harmonization unit for weight_baseline
+    type: string
+
+  weight_baseline:
+    description: >
+      Body weight at baseline. (kg)
+    type: number
+
+  cases:
+    $ref: "_definitions.yaml#/to_one"
