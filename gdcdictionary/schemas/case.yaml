@@ -41,7 +41,6 @@ links:
 required:
   - type
   - submitter_id
-  - families 
 
 uniqueKeys:
   - [id]
