@@ -198,7 +198,6 @@ properties:
       - Control
       - Not Reported
       - Unknown
-      - null
 
   families: 
     $ref: "_definitions.yaml#/to_one"
