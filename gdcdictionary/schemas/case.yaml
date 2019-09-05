@@ -190,6 +190,16 @@ properties:
       $ref: "_terms.yaml#/relationship_to_proband"
     type: string
 
+  disease_status:
+    description: >
+      "Indicates whether the patient is afflicted with the disease, case study, or is a control for the study."
+    enum:
+      - Case
+      - Control
+      - Not Reported
+      - Unknown
+      - null
+
   families: 
     $ref: "_definitions.yaml#/to_one"
   studies:
