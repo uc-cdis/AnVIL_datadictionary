@@ -55,7 +55,12 @@ properties:
     enum:
       - Genotyping
       - Expression
-
+  investigator_name:
+    description: "Name of the principal investigator for the project."
+    type: string
+  investigator_affiliation:
+    description: "The investigator's affiliation with respect to a research institution."
+    type: string
   type_of_data:
     description: "Is the data raw or processed?"
     enum:
