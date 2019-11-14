@@ -53,12 +53,6 @@ properties:
   code:
     type: string
     description: "Unique identifier for the project."
-  investigator_name:
-    description: "Name of the principal investigator for the project."
-    type: string
-  investigator_affiliation:
-    description: "The investigator's affiliation with respect to a research institution."
-    type: string
   date_collected:
     description: "The date or date range in which the project data was collected."
     type: string
