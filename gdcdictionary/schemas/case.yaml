@@ -55,6 +55,16 @@ properties:
       If amputated, the amputation type for leg, above the knee or below the knee.   
     type: string
 
+  maternal_submitter_id:
+    description: >
+      The case submitter_id for the mother.   
+    type: string
+
+  paternal_submitter_id:
+    description: >
+      The case submitter_id for the father.   
+    type: string
+
   site:
     description: >
       "Site where the case was recruted."

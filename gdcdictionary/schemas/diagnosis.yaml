@@ -103,6 +103,13 @@ properties:
       - "TYPE 2 DIABETES"
       - "NOT APPLICABLE"
 
+  hpo_terms:
+    description: >
+        These are HPO terms from the Human Phenotype Ontology (https://hpo.jax.org/app/).
+    type: array
+    items:
+      type: string
+
   hypertension_diagnosis:
     description: >
       Hypertension by jnc vi (1997) criteria
