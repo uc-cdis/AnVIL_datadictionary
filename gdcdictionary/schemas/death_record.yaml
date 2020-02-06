@@ -42,37 +42,66 @@ properties:
 
   body_temperature:
     description: >
-      The temperature of the donor's body, with different methods of colletion based on donor type (postmortem or OPO). Postmortem donor temperature collection is via the liver. Organ donor temperature collection is through the anesthesia probe. Tissue donor temperature collection is via the liver or rectal.  
+      The temperature of the donor's body, with different methods of colletion based on donor type (postmortem or OPO). Postmortem donor temperature collection is via the liver. Organ donor temperature collection is through the anesthesia probe. Tissue donor temperature collection is via the liver or rectal. (GTEx) 
     type: number
 
   body_temperature_scale:
     description: >
-      The temperature scale (Fahrenheit or Celcius) used when entering core body temperature.  
+      The temperature scale (Fahrenheit or Celcius) used when entering core body temperature. (GTEx)  
     enum:
       - "C"
       - "F"
 
   body_temperature_location:
     description: >
-      The method for obtaining core body temperature.  
+      The method for obtaining core body temperature. (GTEx) 
+    type: string
+
+  tissue_recovery:
+    description: >
+      Tissue Recovery Time Point Reference. Indicates whether the tissue ischemic time begins at the donor's actual death, presumed death, or when the cross clamp was applied in the case of surgical donors. (GTEx)
     type: string
 
   death_pronounced_interval:
     description: >
-      Time pronounced dead Interval between Date and time pronounced dead and observed/witnessed death (hours)  
+      Time pronounced dead Interval between Date and time pronounced dead and observed/witnessed death (years). (GTEx)  
     type: string
 
-  death_index_time:
+  death_time_point_reference:
     description: >
-      Indicates whether the postmortem interval begins at the donor's actual death or presumed death.  
+      Indicates whether the postmortem interval begins at the donor's actual death or presumed death. (GTEx)
     enum:
       - "Actual Death"
       - "Presumed Death"
       - "Cross Clamp Applied"
+  
+  death_time:
+    description: >
+      Time of death in hours:minutes. (GTEx)
+    type: string
+
+  death_season:
+    description: >
+      Season of death. (GTEx)
+    enum:
+      - "Spring"
+      - "Summer"
+      - "Fall"
+      - "Winter"
+  
+  brain_ph:
+    description: >
+      pH of the Donor's brain, measured postmortem in the cerebellum. (GTEx)
+    type: number 
+
+  brain_weight:
+    description: >
+      Postmortem weight of the Donor's brain, in grams. (GTEx)
+    type: number 
 
   available_death_certificate:
     description: >
-      Is death certificate available? Whether the death certificate is available to the collection team at the time of determination of eligibility.  
+      Is death certificate available? Whether the death certificate is available to the collection team at the time of determination of eligibility. (GTEx)
     enum:
       - "No"
       - "Yes"
@@ -80,12 +109,12 @@ properties:
 
   first_cause_of_death:
     description: >
-      A disease or injury, leading to the cause of death listed in immediate_cause_of_death.  
+      A disease or injury, leading to the cause of death listed in immediate_cause_of_death. (GTEx)
     type: string
 
   hardy_scale:
     description: >
-      Death Classification: 4-point Hardy Scale Death classification based on the 4-point Hardy Scale:
+      Death Classification: 4-point Hardy Scale Death classification based on the 4-point Hardy Scale. (GTEx)
       1) Violent and fast death: Deaths due to accident, blunt force trauma or suicide, terminal phase estimated at < 10 min.
       2) Fast death of natural causes: Sudden unexpected deaths of people who had been reasonably healthy, after a terminal phase estimated at < 1 hr (with sudden death from a myocardial infarction as a model cause of death for this category)
       3) Intermediate death: Death after a terminal phase of 1 to 24 hrs (not classifiable as 2 or 4) patients who were ill but death was unexpected
@@ -99,61 +128,94 @@ properties:
 
   immediate_cause_of_death:
     description: >
-      The final list of diseased, injuries, and/or complications directly causing death.  
+      The final list of diseased, injuries, and/or complications directly causing death. (GTEx)
     type: string
 
-  hours_to_death_first_cause:
+  interval_to_death_first_cause:
     description: >
-      Onset to Death interval from first underlying cause of death to death (hours).  
+      Onset to Death interval from first underlying cause of death to death (hours). (GTEx) 
     type: integer
 
-  hours_to_death_immediate_cause:
+  interval_to_death_immediate_cause:
     description: >
-      Onset to Death Interval from immediate cause of death to death (hours)
+      Onset to Death Interval from immediate cause of death to death (hours). (GTEx)
     type: integer
 
-  hours_to_death_last_cause:
+  interval_to_death_last_cause:
     description: >
-      Onset to Death Interval from last underlying cause of death to death (hours).  
+      Onset to Death Interval from last underlying cause of death to death (hours). (GTEx) 
     type: integer
 
   last_cause_of_death:
     description: >
-      Onset to Death Interval from last underlying cause of death to death (hours).  
+      Last Underlying Cause of Death. The disease or injury that initiated the chain of events that led directly and inevitably to death listed in immediate_cause_of_death. (GTEx) 
     type: string
 
   manner_of_death:
     description: >
-      Manner of Death An adverse event resulting in death.  
+      Manner of Death An adverse event resulting in death. (GTEx)
     type: string
 
-  determining_person:
+  autopsy_performed_by_coroner_ME:
     description: >
-      If death occurred outside of hospital, who determined date/time of death Type of person who provided the time of death.  
-    enum:
-      - "Physician"
-      - "Coroner/Medical Examiner (ME)"
-      - "Other"
+      Did Coroner / ME Perform an Autopsy? [Determination that] a postmortem examination of the body [was performed] that includes an examination of the internal organs and structures after dissection to determine the cause of death and the nature of pathological changes. (GTEx)
+    type: boolean
+
+  body_refrigerated:
+    description: >
+      Was the body refrigerated at any time before procurement? Report by the site procurement team on whether the Donor's body was refrigerated where refrigerated (temperature range of refrigeration not defined). (GTEx)
+    type: boolean
+
+  hours_in_refrigeration:
+    description: >
+      The period of time during which body was refrigerated (hours). (GTEx)
+    type: number
 
   place_of_death:
     description: >
-      Location where death occurred.  
+      Location where death occurred. (GTEx)
     type: string
+
+  ventilator_less_than_24h:
+    description: >
+      Did site receive verbal confirmation of ventilator status <24 hours prior to collection start? Verification from the site that the Donor was ventilated (on life support) for < 24 hours prior to the estimated procurement start time. (GTEx)
+    type: boolean
 
   hours_in_ventilator:
     description: >
-      Period of time that donor was assisted by a medical device that facilitates breathing prior to death.  
+      Period of time that donor was assisted by a medical device that facilitates breathing prior to death. (GTEx)
     type: integer
 
   on_ventilator_immediate:
     description: >
-      Was donor on a ventilator immediately prior to Death? (Ascertion that donor was assisted by a medical device that facilitates breathing immediately prior to death).  
+      Was donor on a ventilator immediately prior to Death? (Ascertion that donor was assisted by a medical device that facilitates breathing immediately prior to death). (GTEx)
     type: boolean
 
   witnessed_death:
     description: >
-      Whether the death was observed by a witness.  
+      Whether the death was observed by a witness. (GTEx) 
     type: boolean
+
+  person_determined_date_time_of_death:
+    description: >
+      If death occurred outside of hospital, who determined date/time of death. Type of person who provided the time of death. (GTEx)
+    type: string
+
+  icd10_ classification_of_death:
+    description: >
+      The parent classification of the ICD-10 code in the DTHICD10 variable. (GTEx)
+    type: string
+
+  icd10_cause_of_death:
+    description: >
+      The specific cause of death indicated by the ICD-10 code in the DTHICD10 variable. (GTEx)
+    type: string
+
+  icd10_category_of_death:
+    description: >
+      A logical grouping of causes of death based on the ICD-10 code in the DTHICD10 variable. This variable is most suited for use as a covariate in analyses. (GTEx)
+    type: string
+  
 
   cases:
     $ref: "_definitions.yaml#/to_one"

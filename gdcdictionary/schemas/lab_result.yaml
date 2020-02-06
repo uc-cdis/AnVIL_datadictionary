@@ -300,6 +300,77 @@ properties:
     description: >
       Cytomegalovirus (pos/neg)
     type: string
+  
+  cmv_total_ab:
+    description: >
+      Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the presence of a genus of the family herpesviridae, subfamily betaherpesvirinae, infecting the salivary glands, liver, spleen, lungs, eyes, and other organs, in which they produce characteristically enlarged cells with intranuclear inclusions. (GTEx)
+    type: number
+
+  ebv_igg_ab:
+    description: >
+      Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the amount of immunoglobulin G present in a sample. (GTEx)
+    type: number
+
+  ebv_igm_ab:
+    description: >
+      Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the amount of immunoglobulin M present in a sample. (GTEx)
+    type: number
+
+  hbcab_igm:
+    description: >
+      Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the amount of Hepatitis B virus core antibody and the amount of immunoglobulin M present in a sample. (GTEx)
+    type: number
+
+  hbcab_total:
+    description: >
+      HBcAb (Total; IgG+IgM). Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the amount of Hepatitis B virus core antibody present in a sample. (GTEx)
+    type: number
+
+  hbsab:
+    description: >
+      HBsAb. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the surface antibody reaction of a sample to the Hepatitis B virus. (GTEx)
+    type: number
+
+  hbsag:
+    description: >
+      HBsAg. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the presence of hepatitis B virus surface antigen. (GTEx)
+    type: number
+  
+  hcv1_nat:
+    description: >
+      HCV_1_NAT. Requested results from any local serology panel, dictated by the local institution (not the project). Any of various amplification and detection strategies applied to detection of virus contamination in donor blood, specifically small, enveloped, positive sense single strand RNA virus in the family Flaviviridae. (GTEx)
+    type: number
+
+  hcvab:
+    description: >
+      HCV Ab. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the presence of a small, enveloped, positive sense single strand RNA virus in the family Flaviviridae and protein made by B lymphocytes in response to a foreign substance (antigen). (GTEx)
+    type: number
+
+  hiv1_nat:
+    description: >
+      HIV-1 NAT. Requested results from any local serology panel, dictated by the local institution (not the project). Any of various amplification and detection strategies applied to detection of virus contamination in donor blood, specifically the virus isolated and recognized as the etiologic agent of AIDS. (GTEx)
+    type: number
+
+  hiv_ab:
+    description: >
+      HIV I/II Ab. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed using HIV antibodies produced by B-cells, human immunodeficiency virus (HIV) antibodies that react with HIV antigens. (GTEx)
+    type: number
+
+  hiv_plus_o_ab:
+    description: >
+      HIV I/II Plus O Antibody. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed using HIV antibodies produced by B-cells, human immunodeficiency virus (HIV) antibodies that determine the amount of HIV-1 group O antibody present in a sample. (GTEx)
+    type: number
+
+  prr_vdrl:
+    description: >
+      PRR/VDRL. Requested results from any local serology panel, dictated by the local institution (not the project). A variety of serologic tests for syphilis. (GTEx)
+    type: number
+
+  rpr:
+    description: >
+      RPR. Requested results from any local serology panel, dictated by the local institution (not the project). Test performed to determine the antibodies produced by cellular damage caused by Treponema pallidum present in a sample. (GTEx)
+    type: number
+
 
   hpylori1:
     description: >

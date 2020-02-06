@@ -53,6 +53,26 @@ properties:
     type:
       - string
       - "null"
+  
+  pedigree_image:
+    description: >
+      Bucket file reference to pedigree image. (CMG)
+    type: string
+
+  pedigree_detail:
+    description: >
+      Pedigree relationship information. (CMG)
+    type: string
+
+  family_history:
+    description: >
+      Family_history. (CMG)
+    type: string
+
+  family_onset:
+    description: >
+      Typical age of onset for the family. Age is encoded as ISO8601 duration. (CMG)
+    type: string
 
   studies:
     $ref: "_definitions.yaml#/to_many"

@@ -40,10 +40,9 @@ uniqueKeys:
 properties:
   $ref_ubiq: "_definitions.yaml#/ubiquitous_properties"
 
-  hpo_id:
+  phenotype_hpo_id:
     description: |
-      The ID of the term from Human Phenotype Ontology
-      which represents a harmonized phenotype
+      The ID of the term from Human Phenotype Ontology which represents a harmonized phenotype. (CMG)
     type: string
 
   snomed_id_phenotype:
@@ -52,12 +51,16 @@ properties:
       which encodes clinical terminology
     type: string
 
-  phenotype:
-    description: "Name given to the phenotype by contributor"
+  phenotype_description:
+    description: "Name given to the phenotype by contributor. (CMG)"
+    type: string
+
+  phenotype_group:
+    description: "This is a grouping used for specific studies. One subject could be in multiple groups." (CMG)
     type: string
 
   observed:
-    description: "Whether phenotype is negative or positive"
+    description: "Whether phenotype is negative or positive." (CMG)
     enum:
       - Positive
       - Negative
@@ -65,14 +68,22 @@ properties:
       - Not Applicable
       - Reported Unknown
 
-  age_at_event_days:
+  disease_omim_id:
+    description: |
+      The ID of the term from OMIM which represents a disease. (CMG)
+    type: string
+
+  disease_description:
+    description: "Name given to the disease by contributor. (CMG)"
+    type: string
+
+  age_of_onset:
     term:
-      $ref: "_terms.yaml#/age_at_event_days"
-    type:
-      - integer
-      - "null"
-    maximum: 32872
-    minimum: 0
+      $ref: "_terms.yaml#/age_of_onset"
+    type: string
+    description: >
+      Age of onset (if affected). Otherwise age of last exam or phenotype transfer. (CMG)
+      
 
   age_at_event_days_gt89:
     term:

@@ -21,6 +21,46 @@ a260_a280_ratio:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5432595&version=1.0"
 
+age:
+  description: >
+    Age at last visit. Age is encoded as ISO8601 duration. (CMG)
+  termDef:
+    term: Age at last visit. Age is encoded as ISO8601 duration.
+    source: Phenopackets
+    cde_id: ISO8601
+    cde_version: 1.0
+    term_url: "https://phenopackets-schema.readthedocs.io/en/latest/age.html#rstage"
+
+family_onset:
+  description: >
+    Typical age of onset for the family. Age is encoded as ISO8601 duration. (CMG)
+  termDef:
+    term: Typical age of onset for the family. Age is encoded as ISO8601 duration.
+    source: Phenopackets
+    cde_id: ISO8601
+    cde_version: 1.0
+    term_url: "https://phenopackets-schema.readthedocs.io/en/latest/age.html#rstage"
+
+disease_omim_id:
+  description: >
+    The ID of the term from OMIM which represents a disease. (CMG)
+  termDef:
+    term: The ID of the term from OMIM which represents a disease. (CMG)
+    source: OMIM
+    cde_id: OMIM
+    cde_version: 1.0
+    term_url: "https://www.ncbi.nlm.nih.gov/omim"
+
+phenotype_hpo_id:
+  description: >
+    The ID of the term from Human Phenotype Ontology which represents a harmonized phenotype. (CMG)
+  termDef:
+    term: The ID of the term from Human Phenotype Ontology which represents a harmonized phenotype. (CMG)
+    source: HPO
+    cde_id: HPO
+    cde_version: 1.0
+    term_url: "https://hpo.jax.org/app/"
+
 adapter_name: # TOREVIEW
   description: >
     Name of the sequencing adapter.
@@ -29,9 +69,15 @@ adapter_sequence: # TOREVIEW
   description: >
     Base sequence of the sequencing adapter.
 
-age_at_event_days:
+age_of_onset:
   description: >
-    Age at the time an event occurs expressed in the number of days since birth. If the age at event is greater than 32872 days (89 years), then see 'age_at_event_gt89'.
+    Age of onset (if affected). Otherwise age of last exam or phenotype transfer. (CMG)
+  termDef:
+    term: Age of onset (if affected). Otherwise age of last exam or phenotype transfer. (CMG)
+    source: Phenopackets
+    cde_id: ISO8601
+    cde_version: 1.0
+    term_url: "https://phenopackets-schema.readthedocs.io/en/latest/age.html#rstage"
 
 age_at_event_days_gt89:
   description: >
@@ -158,16 +204,10 @@ alcohol_history:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2201918&version=1.0"
 
-alcohol_intensity:
+drink_number:
   description: >
-    Category to describe the patient's current level of alcohol use as self-reported by the patient.
-  termDef:
-    term: Person Self-Report Alcoholic Beverage Exposure Category
-    source: caDSR
-    cde_id: 3457767
-    cde_version: 1.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=3457767&version=1.0"
-
+    Units of drink consumed during Drink Period (DRNKPRD). (GTEx)
+  
 aliquot_quantity:
   description: >
     The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for
@@ -329,19 +369,29 @@ biomarker_test_method:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=3121575&version=1.0"
 
-biospecimen_anatomic_site:
+biospecimen_anatomic_site_id:
   description: >
-    Text term that represents the name of the primary disease site of the submitted tumor sample.
+    Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
   termDef:
-    term: Submitted Tumor Sample Primary Anatomic Site
-    source: caDSR
-    cde_id: 4742851
+    term: Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
+    source: Uberon
+    cde_id: Uberon
     cde_version: 1.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=4742851&version=1.0"
+    term_url: "https://www.ebi.ac.uk/ols/ontologies/uberon"
+
+biospecimen_anatomic_site_label:
+  description: >
+    Uberon Label, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
+  termDef:
+    term: Uberon Label, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
+    source: Uberon
+    cde_id: Uberon
+    cde_version: 1.0
+    term_url: "https://www.ebi.ac.uk/ols/ontologies/uberon"
 
 bmi:
   description: >
-    The body mass divided by the square of the body height expressed in units of kg/m^2 (HARMONIZED).
+    Autocalculated field of BMI: general indicator of the body fat an individual is carrying based upon the ratio of weight to height. BMI = 703 * weight in pounds/height in inches squared. (GTEx)
   termDef:
     term: Body Mass Index (BMI)
     source: caDSR
@@ -480,7 +530,7 @@ data_format: # TOREVIEW
 
 data_type: # TOREVIEW
   description: >
-    Specific content type of the data file.
+    Specific content type of the data file. (CMG)
 
 datetime:
   description: >
@@ -670,7 +720,7 @@ ethnicity:
   description: >
     An individual's self-described social and cultural grouping, specifically whether an individual
     describes themselves as Hispanic or Latino (HARMONIZED). The provided values are based on the categories
-    defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau. (CMG, GTEx)
   termDef:
     term: Ethnic Group Category Text
     source: caDSR
@@ -772,11 +822,11 @@ freezing_method:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5432607&version=1.0"
 
-gender:
+sex:
   description: >
     Text designations that identify gender (HARMONIZED). Gender is described as the assemblage of properties that
     distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification
-    of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]
+    of gender is based upon self-report and may come from a form, questionnaire, interview, etc.] (CMG)
   termDef:
     term: Person Gender Text Type
     source: caDSR
@@ -786,7 +836,7 @@ gender:
 
 height:
   description: >
-    The height of the patient in centimeters (HARMONIZED).
+    The height of Donor in inches as reported by Donor, family/next of kin, or medical record abstraction. (GTEx)
   termDef:
     term: Patient Height Measurement
     source: caDSR
@@ -1113,10 +1163,9 @@ oct_embedded:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5432538&version=1.0"
 
-pack_years_smoked:
+years_smoked:
   description: >
-    Numeric computed value to represent lifetime tobacco exposure defined as number of cigarettes
-    smoked per day x number of years smoked divided by 20.
+    Number of years the Donor smoked. (GTEx)
   termDef:
     term: Person Cigarette Smoking History Pack Year Value
     source: caDSR
@@ -1297,15 +1346,6 @@ preservation_method:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5432521&version=1.0"
 
-primary_diagnosis:
-  description: >
-    Text term for the structural pattern of cancer cells used to define a microscopic diagnosis.
-  termDef:
-    term: Neoplasm Histologic Type Name
-    source: caDSR
-    cde_id: 3081934
-    cde_version: 3.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=3081934&version=3.0"
 
 prior_malignancy:
   description: >
@@ -1383,7 +1423,7 @@ race:
     arises as a consequence of geographical isolation within a species and is characterized by
     shared heredity, physical attributes and behavior, and in the case of humans, by common history,
     nationality, or geographic distribution. The provided values are based on the categories defined
-    by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    by the U.S. Office of Management and Business and used by the U.S. Census Bureau. (GTEx)
   termDef:
     term: Race Category Text
     source: caDSR

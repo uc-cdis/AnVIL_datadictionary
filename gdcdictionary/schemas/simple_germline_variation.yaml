@@ -85,6 +85,11 @@ properties:
       $ref: "_terms.yaml#/data_type"
     enum: [ "Simple Germline Variation" ]
 
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
+      
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
