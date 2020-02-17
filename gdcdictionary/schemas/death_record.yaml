@@ -201,7 +201,7 @@ properties:
       If death occurred outside of hospital, who determined date/time of death. Type of person who provided the time of death. (GTEx)
     type: string
 
-  icd10_ classification_of_death:
+  icd10_classification_of_death:
     description: >
       The parent classification of the ICD-10 code in the DTHICD10 variable. (GTEx)
     type: string
