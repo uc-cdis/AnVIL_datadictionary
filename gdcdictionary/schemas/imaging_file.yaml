@@ -66,6 +66,11 @@ properties:
     term:
       $ref: "_terms.yaml#/data_type"
     type: string
+  
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
 
   data_format:
     term:

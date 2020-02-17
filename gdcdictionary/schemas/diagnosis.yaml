@@ -86,14 +86,10 @@ properties:
       - number
       - "null"
 
-  diabetes_diagnosis:
+  phenotype_detail:
     description: >
-      Exam diabetes mellitus by 2003 ada fasting criteria algorithm
-    enum:
-      - "NORMAL"
-      - "IFG"
-      - "UNTREATED DIABETES"
-      - "TREATED DIABETES"
+      Descriptive phenotype synopsis. (CMG)
+    type: string
 
   diabetes_type:
     description: >
@@ -141,9 +137,9 @@ properties:
       $ref: "_terms.yaml#/morphology"
     type: string
 
-  primary_diagnosis:
-    term:
-      $ref: "_terms.yaml#/primary_diagnosis"
+  prior_testing:
+    description: >
+      Prior testing information. (CMG)
     type: string
 
   vital_status:

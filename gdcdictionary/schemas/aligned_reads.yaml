@@ -95,6 +95,11 @@ properties:
     enum:
       - BAM
       - CRAM
+  
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
 
   experimental_strategy:
     term:

@@ -138,4 +138,4 @@ properties:
     format: date-time
   dbgap_accession_number:
     type: string
-    description: "The dbgap accession number provided for the project."
+    description: "The dbgap accession number provided for the project. (CMG)"

@@ -74,6 +74,11 @@ properties:
       $ref: "_terms.yaml#/data_format"
     enum:
       - TXT
+  
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
 
   experimental_strategy:
     term:

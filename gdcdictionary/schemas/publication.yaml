@@ -49,7 +49,15 @@ properties:
       - string
       - "null"
   pmid:
+    description: >
+      PubMed ID. (CMG)
     type: string
+  
+  pmid_description:
+    description: >
+      Title of the publication. (CMG)
+    type: string
+  
   doi:
     type: string
   projects:

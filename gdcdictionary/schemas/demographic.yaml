@@ -42,30 +42,30 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-# HARMONIZED VARIABLES ACROSS GTEX AND TOPMED PROJECTS
-  age_at_index:
-    description: >
-      The subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED). If age is greater than 89 years, see 'age_at_index_gt89'.
-    type: number
-    maximum: 89
-    minimum: 0
 
-  age_at_index_gt89:
-    description: >
-      Indicate whether the subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED) is greater than 89 years.
-    enum:
-      - "Yes"
-      - "No"
-
-  gender:
+  age:
     term:
-      $ref: "_terms.yaml#/gender"
+      $ref: "_terms.yaml#/age"
+    description: >
+      Age at last visit. Age is encoded as ISO8601 duration. (CMG, CCDG, GTEx)
+    type: string
+
+
+  sex:
+    term:
+      $ref: "_terms.yaml#/sex"
+    description: >
+      Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. (CMG, CCDG, GTEx)
     enum:
       - female
       - male
-      - unknown
-      - unspecified
-      - not reported
+      - unknown_sex
+      - other_sex
+
+  consanguinity_status:
+    description: >
+      Consanguinity status is the property of being from the same kinship as another person. (CMG)
+    type: boolean
 
   race:
     term:
@@ -207,9 +207,9 @@ properties:
       age at measurement of height_baseline (years)
     type: number
 
-  unit_height_baseline:
+  unit_height:
     description: >
-      harmonization unit for height_baseline
+      harmonization unit for height. (GTEx)
     type: string
 
   unit_race:
@@ -298,14 +298,14 @@ properties:
       harmonization unit for subcohort
     type: string
 
-  unit_weight_baseline:
+  unit_weight:
     description: >
-      harmonization unit for weight_baseline
+      harmonization unit for weight. (GTEx)
     type: string
 
-  weight_baseline:
+  weight:
     description: >
-      Body weight at baseline. (kg)
+      The weight of Donor in pounds as reported by Donor, family/next of kin, or medical record abstraction. (GTEx)
     type: number
 
   cases:

@@ -73,6 +73,11 @@ properties:
       - GTC
       - GCT
       - CEL
+  
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
 
   experimental_strategy:
     term:

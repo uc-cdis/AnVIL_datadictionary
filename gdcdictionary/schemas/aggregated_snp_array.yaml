@@ -71,6 +71,11 @@ properties:
     enum:
       - Aggregated SNP Alleles
       - Individual SNP Alleles
+  
+  release_date:
+    type: string
+    description: >
+      Date of data generation. (CMG)
 
   data_format:
     term:

@@ -48,11 +48,31 @@ properties:
 # HARMONIZED VARIABLES ACROSS GTEX AND TOPMED PROJECTS
   smoking_status:
     description: >
-      Smoking condition (HARMONIZED)
+      Smoking condition (HARMONIZED). (GTEx)
     enum:
       - "NEVER"
       - "FORMER"
       - "CURRENT"
+
+  smoke_type:
+    description: >
+      Type primarily smoked by Donor. (GTEx)
+    type: string
+
+  smoke_number:
+    description: >
+      Units smoked during Smoke Period (SMKPRD). (GTEx)
+    type: integer
+
+  smoke_period:
+    description: >
+      Period of time corresponding to Smoke Number (SMKNMB). (GTEx)
+    type: string
+  
+  smoke_comments:
+    description: >
+      Comments about smoking status of Donor. (GTEx)
+    type: string
 
   years_smoked:
     term:
@@ -82,22 +102,42 @@ properties:
       PM25 Air Pollution measurement, lifetime average.
     type: number
 
-  alcohol_status:
+  drinking_status:
     description: >
-      Alcohol use
+      Did the Donor drink. (GTEx)
     enum:
       - "NEVER"
       - "FORMER"
       - "CURRENT"
+  
+  drink_type:
+    description: >
+      Did the Donor drink. (GTEx)
+    type: string
 
   alcohol_history:
     term:
       $ref: "_terms.yaml#/alcohol_history"
     type: string
 
-  alcohol_intensity:
+  drink_number:
     term:
-      $ref: "_terms.yaml#/alcohol_intensity"
+      $ref: "_terms.yaml#/drink_number"
+    type: integer
+
+  drink_period:
+    description: >
+      Period of time corresponding to Drink Number (DRNKNMB). (GTEx)
+    type: string
+
+  drink_years:
+    description: >
+      Number of years the Donor drank. (GTEx)
+    type: integer
+
+  drink_comments:
+    description: >
+      Comments about drinking status of Donor. (GTEx)
     type: string
 
   alcohol_start_age:
@@ -395,8 +435,6 @@ properties:
     type: boolean
 
   pack_years_smoked:
-    term:
-      $ref: "_terms.yaml#/pack_years_smoked"
     type: number
 
   pipe_smoked_20_lifetime:
