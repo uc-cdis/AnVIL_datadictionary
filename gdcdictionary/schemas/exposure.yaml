@@ -435,8 +435,6 @@ properties:
     type: boolean
 
   pack_years_smoked:
-    term:
-      $ref: "_terms.yaml#/pack_years_smoked"
     type: number
 
   pipe_smoked_20_lifetime:
