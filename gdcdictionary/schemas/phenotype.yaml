@@ -56,11 +56,11 @@ properties:
     type: string
 
   phenotype_group:
-    description: "This is a grouping used for specific studies. One subject could be in multiple groups." (CMG)
+    description: "This is a grouping used for specific studies. One subject could be in multiple groups. (CMG)"
     type: string
 
   observed:
-    description: "Whether phenotype is negative or positive." (CMG)
+    description: "Whether phenotype is negative or positive. (CMG)"
     enum:
       - Positive
       - Negative
