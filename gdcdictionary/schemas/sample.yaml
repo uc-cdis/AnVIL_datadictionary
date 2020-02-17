@@ -60,8 +60,6 @@ properties:
     type: string
 
   biospecimen_anatomic_site_uberon_label:
-    term:
-      $ref: "_terms.yaml#/biospecimen_anatomic_site_uberon_label"
     description: >
       Uberon Label, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
     type: string
