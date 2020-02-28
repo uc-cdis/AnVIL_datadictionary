@@ -62,7 +62,7 @@ properties:
   smoke_number:
     description: >
       Units smoked during Smoke Period (SMKPRD). (GTEx)
-    type: integer
+    type: number
 
   smoke_period:
     description: >
@@ -123,7 +123,7 @@ properties:
   drink_number:
     term:
       $ref: "_terms.yaml#/drink_number"
-    type: integer
+    type: number
 
   drink_period:
     description: >
@@ -133,7 +133,7 @@ properties:
   drink_years:
     description: >
       Number of years the Donor drank. (GTEx)
-    type: integer
+    type: number
 
   drink_comments:
     description: >
