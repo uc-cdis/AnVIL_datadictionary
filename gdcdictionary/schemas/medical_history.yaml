@@ -673,7 +673,7 @@ properties:
   chdh_time:
     description: >
       Time to hard CHD or Last Follow-up in days
-    type: integer
+    type: number
 
   chda:
     description: >
@@ -683,7 +683,7 @@ properties:
   chda_time:
     description: >
       Time to all CHD or Lat Follow-up in days
-    type: integer
+    type: number
 
   cvdh:
     description: >
@@ -693,7 +693,7 @@ properties:
   cvdh_time:
     description: >
       Time to hard CVD or Last Follow-up in days
-    type: integer
+    type: number
 
   cvda:
     description: >
@@ -703,7 +703,7 @@ properties:
   cvda_time:
     description: >
       Time to all CVD or Last Follow-up in days
-    type: integer
+    type: number
 
   prostate_cancer:
     description: >

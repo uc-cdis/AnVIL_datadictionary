@@ -134,17 +134,17 @@ properties:
   interval_to_death_first_cause:
     description: >
       Onset to Death interval from first underlying cause of death to death (hours). (GTEx) 
-    type: integer
+    type: number
 
   interval_to_death_immediate_cause:
     description: >
       Onset to Death Interval from immediate cause of death to death (hours). (GTEx)
-    type: integer
+    type: number
 
   interval_to_death_last_cause:
     description: >
       Onset to Death Interval from last underlying cause of death to death (hours). (GTEx) 
-    type: integer
+    type: number
 
   last_cause_of_death:
     description: >
@@ -184,7 +184,7 @@ properties:
   hours_in_ventilator:
     description: >
       Period of time that donor was assisted by a medical device that facilitates breathing prior to death. (GTEx)
-    type: integer
+    type: number
 
   on_ventilator_immediate:
     description: >
