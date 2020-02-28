@@ -58,7 +58,7 @@ properties:
   cumulative_gap_length:
     description: >
       Cumulative Gap Length: Cumulative length of gap regions
-    type: integer
+    type: number
 
   encoding:
     term:
@@ -73,7 +73,7 @@ properties:
   estimated_library_size:
     description: >
       Estimated library size: Number of expected fragments based on the total reads and duplication rate assuming a Poisson distribution.
-    type: integer
+    type: number
 
   fastq_name:
     term:
@@ -86,7 +86,7 @@ properties:
   maximun_read_length:
     description: >
       Read Length: maximum detected read length found
-    type: integer
+    type: number
 
   mean_coefficient_of_variation_of_base_covarage:
     description: >
@@ -101,12 +101,12 @@ properties:
   mean_frament_length:
     description: >
       Fragment Length Mean: The fragment length is the distance between the start of an upstream read and the end of the downstream pair mate
-    type: integer
+    type: number
 
   number_of_gaps:
     description: >
       Number of Gaps: Number of regions with >=5 bases with zero coverage
-    type: integer
+    type: number
 
   overrepresented_sequences:
     $ref: "_definitions.yaml#/qc_metrics_state"
@@ -178,7 +178,7 @@ properties:
   percent_gc_content:
     term:
       $ref: "_terms.yaml#/percent_gc_content"
-    type: integer
+    type: number
     minimum: 0
     maximum: 100
 
@@ -234,36 +234,36 @@ properties:
     description: >
       Fragment Length StdDev: The fragment length is the distance between the start of an upstream read 
       and the end of the downstream pair mate
-    type: integer
+    type: number
 
   total_aligned_reads:
     description: "The total number of reads with at least one reported alignment."
-    type: integer
+    type: number
 
   total_sequences:
     term:
       $ref: "_terms.yaml#/total_sequences"
-    type: integer
+    type: number
 
   total_alternative_aligment:
     description: >
       Alternative Aligments: duplicate read entries providing alternative coordinates
-    type: integer
+    type: number
 
   total_chimeric_pairs:
     description: >
       Chimeric Pairs: Pairs whose mates map to different genes
-    type: integer
+    type: number
 
   total_end1_in_antisense:
     description: >
       End 1 Antisense: Number of End 1 reads that were sequenced in the antisense direction
-    type: integer
+    type: number
 
   total_end1_in_sense:
     description: >
       End 1 Sense: Number of End 1 reads that were sequenced in the sense direction
-    type: integer
+    type: number
 
   total_end2_in_antisense:
     description: >
@@ -273,47 +273,47 @@ properties:
   total_end2_in_sense:
     description: >
       End 2 Sense: Number of End 2 reads that were sequenced in the sense direction
-    type: integer
+    type: number
 
   total_genes_detected:
     description: >
       Genes Detected: Total number of genes with at least 5 exon mapping reads
-    type: integer
+    type: number
 
   total_mapped_pairs:
     description: >
       Mapped Pairs:Total number of pairs for which both ends map
-    type: integer
+    type: number
 
   total_reads_lacking_pair_mate:
     description: >
       Unpaired Reads: number of reads lacking a pair mate
-    type: integer
+    type: number
 
   total_reads_span_exon_exon_boundary:
     description: >
       Split Reads: The number of reads that span an exon-exon boundary
-    type: integer
+    type: number
 
   total_transcript_detected:
     description: >
       Transcripts Detected: Total number of transcripts with at least 5 exon mapping reads
-    type: integer
+    type: number
 
   total_transcript_with_5_sequenced:
     description: >
       Number Covered 5': The number of transcripts that have at least one read in their 5' end
-    type: integer
+    type: number
 
   total_unique_aligned_reads:
     description: >
       Mapped Unique: Number of reads that were aligned and did not have duplicate flags
-    type: integer
+    type: number
 
   total_vendor_check_failed_reads:
     description: >
       Failed Vendor QC Check: reads having been designated as failed by the sequencer
-    type: integer
+    type: number
 
   read_groups:
     $ref: "_definitions.yaml#/to_one"

@@ -235,7 +235,7 @@ properties:
     type: boolean
 
   read_length:
-    type: integer
+    type: number
 
   read_group_name:  # it may be good to assign UUID to read group
     description: "Read Group Name"

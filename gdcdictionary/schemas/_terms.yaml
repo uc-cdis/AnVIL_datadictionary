@@ -980,7 +980,7 @@ ldh_level_at_diagnosis:
     The 2 decimal place numeric laboratory value measured, assigned or computed related to the
     assessment of lactate dehydrogenase in a specimen.
   termDef:
-    term: Laboratory Procedure Lactate Dehydrogenase Result Integer::2 Decimal Place Value
+    term: Laboratory Procedure Lactate Dehydrogenase Result number::2 Decimal Place Value
     source: caDSR
     cde_id: 2798766
     cde_version: 1.0

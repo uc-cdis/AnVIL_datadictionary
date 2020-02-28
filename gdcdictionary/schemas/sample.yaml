@@ -144,7 +144,7 @@ properties:
   hours_to_sample_procurement:
     description: >
       Time a sample spent in the PAXgene fixative
-    type: integer
+    type: number
 
   freezing_method:
     term:
