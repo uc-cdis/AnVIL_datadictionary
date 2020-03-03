@@ -50,9 +50,8 @@ properties:
     description: >
       Smoking condition (HARMONIZED). (GTEx)
     enum:
-      - "NEVER"
-      - "FORMER"
-      - "CURRENT"
+      - "Yes"
+      - "No"
 
   smoke_type:
     description: >
@@ -106,9 +105,8 @@ properties:
     description: >
       Did the Donor drink. (GTEx)
     enum:
-      - "NEVER"
-      - "FORMER"
-      - "CURRENT"
+      - "Yes"
+      - "No"
   
   drink_type:
     description: >
