@@ -79,8 +79,7 @@ properties:
     type:
       - number
       - "null"
-    maximum: 89
-    minimum: 0
+   
 
   years_smoked_gt89:
     term:
