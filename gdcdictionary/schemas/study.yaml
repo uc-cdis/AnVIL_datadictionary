@@ -53,6 +53,10 @@ properties:
     description: "The investigator's affiliation with respect to a research institution."
     type: string
 
+  study_accession:
+    description: "dbGaP accession number."
+    type: string
+    
   study_description:
     description: "A brief description of the study being performed. Free text"
     type: string
