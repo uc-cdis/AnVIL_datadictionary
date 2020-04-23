@@ -156,6 +156,16 @@ properties:
       - Unaffected
       - Not Reported
       - Unknown
+  
+  consanguinity:
+    description: >
+      Indicate if consanguinity is present or suspected within a family (CMG)
+    type: string
+  
+  consanguinity_detail:
+    description: >
+      Free text description of any additional consanguinity details (CMG)
+    type: string
 
   families: 
     $ref: "_definitions.yaml#/to_one"
