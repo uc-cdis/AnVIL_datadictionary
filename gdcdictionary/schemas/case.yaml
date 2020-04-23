@@ -59,8 +59,8 @@ properties:
     description: >
       Flag if an individual has data represented in multiple data types (Ex: Yes if both exome and genome data is available for an individual). (CMG)
     enum: 
-      - Yes
-      - No
+      - "Yes"
+      - "No"
 
   prior_testing:
     description: >
@@ -76,8 +76,8 @@ properties:
     description: >
       Flag if sample has been submitted to dbGaP. (CMG)
     enum: 
-      - Yes
-      - No
+      - "Yes"
+      - "No"
 
   dbgap_study_id:
     description: >
@@ -195,11 +195,11 @@ properties:
     description: >
       "Indicate affected status of individual. (CMG)"
     enum:
-      - Affected
-      - Unaffected
-      - Not Reported
-      - Unknown
-      - Possibly affected
+      - "Affected"
+      - "Unaffected"
+      - "Not Reported"
+      - "Unknown"
+      - "Possibly affected"
 
   families: 
     $ref: "_definitions.yaml#/to_one"
