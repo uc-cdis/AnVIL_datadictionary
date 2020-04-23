@@ -52,13 +52,33 @@ properties:
     type: string
 
   phenotype_description:
-    description: "Name given to the phenotype by contributor. (CMG)"
+    description: "Phenotype term or free text description for additional phenotype information. (CMG)"
     type: string
 
   phenotype_group:
-    description: "This is a grouping used for specific studies. One subject could be in multiple groups. (CMG)"
+    description: "Optional submitter-defined field for samples that could be grouped together in a single analysis based on overlap in phenotypic features. (CMG)"
     type: string
 
+  hpo_present:
+    description: "HPO phenotype terms present. (CMG)"
+    type: array
+    items:
+      type: string
+
+  hpo_absent:
+    description: "HPO phenotype terms absent. (CMG)"
+    type: array
+    items:
+      type: string
+
+  solve_state:
+    description: "Solved state of an individual. (CMG)"
+    enum:
+      - Unsolved
+      - Solved
+      - Tier 2
+      - Tier 1
+  
   observed:
     description: "Whether phenotype is negative or positive. (CMG)"
     enum:
@@ -71,11 +91,29 @@ properties:
   disease_omim_id:
     description: |
       The ID of the term from OMIM which represents a disease. (CMG)
-    type: string
+    type: array
+    items:
+      type: strings
 
   disease_description:
-    description: "Name given to the disease by contributor. (CMG)"
+    description: "Disease name or free text description of disease (especially if concept code not available). (CMG)"
     type: string
+
+  congenital_status:
+    description: "Age of onset bucket range (if affected with non-congenital disorder). (CMG)"
+    enum:
+      - "Unknown"
+      - Congenital onset 
+      - Embryonal onset 
+      - Fetal onset
+      - Neonatal onset 
+      - Infantile onset
+      - Childhood onset
+      - Juvenile onset
+      - Adult onset 
+      - Young adult onset
+      - Middle age onset 
+      - Late onset
 
   age_of_onset:
     term:

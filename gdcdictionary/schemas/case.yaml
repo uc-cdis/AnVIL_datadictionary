@@ -62,11 +62,6 @@ properties:
       - "Yes"
       - "No"
 
-  prior_testing:
-    description: >
-      Text description of any genetic testing for individual conducted prior to enrollment. (CMG)
-    type: string
-
   pmid_id:
     description: >
       Case specific PubMed ID if applicable. (CMG)

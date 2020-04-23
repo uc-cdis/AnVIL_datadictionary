@@ -83,6 +83,7 @@ properties:
       - male
       - unknown_sex
       - other_sex
+      - intersex
 
   consanguinity_status:
     description: >
