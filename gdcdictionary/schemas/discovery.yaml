@@ -1,0 +1,151 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "discovery"
+title: Discovery
+type: object
+namespace: https://dcp.bionimbus.org/
+category: biospecimen
+program: '*'
+project: '*'
+description: >
+  TBD.
+additionalProperties: false
+submittable: true
+validators: []
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+required:
+  - type
+  - submitter_id
+  - samples
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+links:
+  - name: samples
+    backref: discoveries
+    label: derived_from
+    multiplicity: many_to_many
+    target_type: sample
+    required: true
+
+constraints: null
+
+# Discovery properties
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  gene:
+    description: >
+      Candidate Gene Name (CMG)
+    type: string
+
+  gene_class:
+    description: >
+      Indicate of the gene listed is a candidate or known (CMG)
+    enum:
+      - "Known"
+      - "Tier 1 - Candidate"
+      - "Tier 2 - Candidate"
+
+  inheritance_description:
+    description: >
+      Text describing innheritance model (CMG)
+    enum:
+      - de novo
+      - Autosomal recessive (homozygous)
+      - Autosomal recessive (compound heterozygous)
+      - Autosomal dominant
+      - X-linked
+      - Mitochondrial
+      - Y-linked
+      - Contiguous gene syndrome
+      - Somatic mosaicism
+      - Unknown/Other
+
+  zygosity:
+    description: >
+      Zygosity of variant (CMG)
+    enum:
+      - Heterozygous
+      - Homozygous
+
+  variant_genome_build:
+    description: >
+      The genome build for identifying the variant position (CMG)
+    type: string
+
+  chrom:
+    description: >
+      Chromosome of variant (CMG)
+    type: number
+
+  pos:
+    description: >
+      Start position of variant (CMG)
+    type: number
+
+  ref:
+    description: >
+      Reference allele of variant (CMG)
+    type: number
+
+  alt:
+    description: >
+      Alternate position of variant (CMG)
+    type: string
+
+  hgvsc:
+    description: >
+      HGVS c. description (CMG)
+    type: string
+
+  hgvsp:
+    description: >
+      HGVS p. description (CMG)
+    type: string
+
+  transcript:
+    description: >
+     Text description of transcript (CMG)
+    type: string
+
+  sv_name:
+    description: >
+      Text describing structural variant (CMG)
+    type: string
+
+  sv_type:
+    description: >
+      Text describing Structural variant type (CMG)
+    enum:
+      - Deletion
+      - Duplication
+      - Multiallelic CNV
+      - Insertion
+      - Inversion,
+      - Complex SVs
+      - Other
+      - Unknown
+
+  significance:
+    description: >
+      Clinical significance of variant described (CMG)
+    enum:
+      - Benign
+      - Likely benign
+      - Uncertain significance
+      - Suspected pathogenic
+      - Likely pathogenic
+      - Pathogenic
+
+  samples:
+    $ref: "_definitions.yaml#/to_many"
