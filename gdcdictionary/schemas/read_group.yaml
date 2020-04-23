@@ -89,7 +89,7 @@ properties:
       - Ion S5 XL System, Ion 530 Chip
       - Other
 
-  library_strategy:
+  sequencing_assay:
     term:
       $ref: "_terms.yaml#/library_strategy"
     enum:
@@ -244,6 +244,64 @@ properties:
   barcoding_applied:
     description: "True/False: was barcoding applied?"
     type: boolean
+    
+  sequencing_assay:
+    term:
+      description: >
+        Type of sequencing assay performed (CMG)
+    enum:
+      - WGS
+      - WES
+      - RNA-Seq
+      - MEGA
+
+  library_prep_kit_method:
+    term:
+      description: >
+        Library prep kit used (CMG)
+    type: string
+
+  exome_capture_platform:
+    term:
+      description: >
+        Exome capture platform (if applicable) (CMG)
+    type: string
+
+  capture_region_bed_file:
+    term:
+      description: >
+        Capture region bed file (if applicable) (CMG)
+    type: string
+
+  reference_genome_build:
+    term:
+      description: >
+        Reference genome used (CMG)
+    type: string
+
+  alignment_method:
+    term:
+      description: >
+        Alignment method used (CMG)
+    type: string
+
+  data_processing_pipeline:
+    term:
+      description: >
+        Data processing pipeline used (CMG)
+    type: string
+
+  functional_equivalence_standard:
+    term:
+      description: >
+        Is this a functional equivalence standard? (CMG)
+    type: boolean
+
+  date_data_generation:
+    term:
+      description: >
+        Date of data generation (CMG)
+    type: string
 
   aliquots:
     $ref: "_definitions.yaml#/to_one"
