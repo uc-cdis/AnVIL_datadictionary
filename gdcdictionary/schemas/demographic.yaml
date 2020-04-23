@@ -50,6 +50,28 @@ properties:
       Age at last visit. Age is encoded as ISO8601 duration. (CMG, CCDG, GTEx)
     type: string
 
+  age_at_last_observation:
+    description: >
+      Age at last observation. For conditions with later age of onset, this field lets users know if individuals marked as unaffected were younger or older than the age when the phenotype is expected to appear. (CMG)
+    type: integer
+
+  ancestry:
+    description: >
+      Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions (NOT-OD-15-089). (CMG)
+    enum:
+      - "American Indian or Alaskan Native"
+      - "Asian"
+      - "Black or African American"
+      - "Hispanic or Latino"
+      - "Native Hawaiian or Other Pacific Islander"
+      - "White"
+      - "Other"
+      - "Unknown"
+
+  ancestry_detail:
+    description: >
+      Additional specific ancestry description free text. (CMG)
+    type: string
 
   sex:
     term:

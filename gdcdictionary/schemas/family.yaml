@@ -64,6 +64,25 @@ properties:
       Pedigree relationship information. (CMG)
     type: string
 
+  consanguinity:
+    description: >
+      Indicate if consanguinity is present or suspected within a family. (CMG)
+    enum: 
+      - None suspected
+      - Suspected
+      - Present
+      - Unknown
+
+  consanguinity_detail:
+    description: >
+      Free text description of any additional consanguinity details. (CMG)
+    type: string
+
+  pedigree_image:
+    description: >
+      Bucket file reference to pedigree image. (CMG)
+    type: string
+
   family_history:
     description: >
       Family_history. (CMG)
