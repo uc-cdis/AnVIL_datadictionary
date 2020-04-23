@@ -64,14 +64,35 @@ properties:
       Pedigree relationship information. (CMG)
     type: string
 
+  consanguinity:
+    description: >
+      Indicate if consanguinity is present or suspected within a family. (CMG)
+    enum: 
+      - "None suspected"
+      - "Suspected"
+      - "Present"
+      - "Unknown"
+
+  consanguinity_detail:
+    description: >
+      Free text description of any additional consanguinity details. (CMG)
+    type: string
+
+  pedigree_image:
+    description: >
+      Bucket file reference to pedigree image. (CMG)
+    type: string
+
   family_history:
     description: >
-      Family_history. (CMG)
-    type: string
+      Flag if there is a known family history for the phenotype (useful if only proband sequenced but extended family history suggestion mode of inheritance was reported). (CMG)
+    enum: 
+      - "Yes"
+      - "No"
 
   family_onset:
     description: >
-      Typical age of onset for the family. Age is encoded as ISO8601 duration. (CMG)
+      Information regarding age of onset for affected individuals in family if relevant for phenotype. (CMG)
     type: string
 
   studies:

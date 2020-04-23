@@ -55,6 +55,44 @@ properties:
       If amputated, the amputation type for leg, above the knee or below the knee. (GTEx)
     type: string
 
+  multiple_datasets:
+    description: >
+      Flag if an individual has data represented in multiple data types (Ex: Yes if both exome and genome data is available for an individual). (CMG)
+    enum: 
+      - "Yes"
+      - "No"
+
+  pmid_id:
+    description: >
+      Case specific PubMed ID if applicable. (CMG)
+    type: integer
+
+  dbgap_submission:
+    description: >
+      Flag if sample has been submitted to dbGaP. (CMG)
+    enum: 
+      - "Yes"
+      - "No"
+
+  dbgap_study_id:
+    description: >
+      PHS ID for study. (CMG)
+    type: string
+
+  dbgap_subject_id:
+    description: >
+      Subject identifier used in dbGaP (if previously submitted). (CMG)
+    type: string
+
+  twin_id:
+    description: >
+      subject_id for twins, triplets, etc. (CMG)
+    type: string
+
+  proband_relationship:
+    description: >
+      Text description of individual relationship to proband in family, especially useful to capture relationships when connecting distant relatives and connecting relatives not studied. (CMG)
+    type: string
 
   family_id:
     description: >
@@ -150,12 +188,13 @@ properties:
 
   affected_status:
     description: >
-      "Affected status. (CMG)"
+      "Indicate affected status of individual. (CMG)"
     enum:
-      - Affected
-      - Unaffected
-      - Not Reported
-      - Unknown
+      - "Affected"
+      - "Unaffected"
+      - "Not Reported"
+      - "Unknown"
+      - "Possibly affected"
 
   families: 
     $ref: "_definitions.yaml#/to_one"

@@ -53,6 +53,10 @@ properties:
       - Moderate
       - Severe
     
+  dbgap_sample_id:
+    description: >
+      Sample identifier used in dbGaP (if previously submitted). (CMG)
+    type: string
 
   biospecimen_anatomic_site_uberon_id:
     description: >
@@ -67,7 +71,18 @@ properties:
   biospecimen_provider:
     description: >
       The name of collaborator who provides the sample. (CMG) 
-    type: string
+    enum:
+      - UW
+      - Yale
+      - BH
+      - Broad
+
+  tissue_affected_status:
+    description: >
+      If applicable to disease, is the tissue from an affected source or an unaffected source? (CMG)
+    enum:
+      - "Yes"
+      - "No"
 
   biospecimen_physical_site:
     description: >
