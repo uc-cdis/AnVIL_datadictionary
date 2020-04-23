@@ -93,7 +93,7 @@ properties:
       The ID of the term from OMIM which represents a disease. (CMG)
     type: array
     items:
-      type: strings
+      type: string
 
   disease_description:
     description: "Disease name or free text description of disease (especially if concept code not available). (CMG)"
