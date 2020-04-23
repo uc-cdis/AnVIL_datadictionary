@@ -166,6 +166,8 @@ properties:
     description: >
       Free text description of any additional consanguinity details (CMG)
     type: string
+    
+
 
   families: 
     $ref: "_definitions.yaml#/to_one"
