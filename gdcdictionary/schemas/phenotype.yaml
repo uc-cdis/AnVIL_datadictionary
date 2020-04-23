@@ -96,8 +96,8 @@ properties:
     description: >
       Solved state of an individual (CMG)
     enum:
-      - Not Solved
-      - Solved   
+      - "Not Solved"
+      - "Solved"   
 
   cases:
     $ref: "_definitions.yaml#/to_one"
