@@ -99,16 +99,6 @@ properties:
       Text description of individual relationship to proband in family, especially useful to capture relationships when connecting distant relatives and connecting relatives not studied. (CMG)
     type: string
 
-  :
-    description: >
-      The family submitter_id. (CMG)
-    type: string
-
-  family_id:
-    description: >
-      The family submitter_id. (CMG)
-    type: string
-
   family_id:
     description: >
       The family submitter_id. (CMG)
