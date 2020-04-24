@@ -55,6 +55,11 @@ properties:
       If amputated, the amputation type for leg, above the knee or below the knee. (GTEx)
     type: string
 
+  cmg_project_id:
+    description: >
+      Information field about project/cohort. (CMG)
+    type: string
+  
   multiple_datasets:
     description: >
       Flag if an individual has data represented in multiple data types (Ex: Yes if both exome and genome data is available for an individual). (CMG)

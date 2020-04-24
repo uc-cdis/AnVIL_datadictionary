@@ -63,12 +63,12 @@ properties:
       Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
     type: string
 
-  biospecimen_anatomic_site_uberon_label:
+  sample_source:
     description: >
       Uberon Label, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
     type: string
 
-  biospecimen_provider:
+  sample_provider:
     description: >
       The name of collaborator who provides the sample. (CMG) 
     enum:
