@@ -89,7 +89,7 @@ properties:
       - Ion S5 XL System, Ion 530 Chip
       - Other
 
-  sequencing_assay:
+  library_strategy:
     term:
       $ref: "_terms.yaml#/library_strategy"
     enum:
