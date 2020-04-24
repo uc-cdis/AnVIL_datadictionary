@@ -51,10 +51,7 @@ properties:
   gene_class:
     description: >
       Indicate of the gene listed is a candidate or known (CMG)
-    enum:
-      - "Known"
-      - "Tier 1 - Candidate"
-      - "Tier 2 - Candidate"
+    type: string
 
   inheritance_description:
     description: >
@@ -74,9 +71,7 @@ properties:
   zygosity:
     description: >
       Zygosity of variant (CMG)
-    enum:
-      - Heterozygous
-      - Homozygous
+    type: string
 
   variant_genome_build:
     description: >
@@ -86,7 +81,7 @@ properties:
   chrom:
     description: >
       Chromosome of variant (CMG)
-    type: number
+    type: string
 
   pos:
     description: >
@@ -96,7 +91,7 @@ properties:
   ref:
     description: >
       Reference allele of variant (CMG)
-    type: number
+    type: string
 
   alt:
     description: >

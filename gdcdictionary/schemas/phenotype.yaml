@@ -30,7 +30,6 @@ links:
 required:
   - type
   - cases
-  - observed
   - submitter_id
 
 uniqueKeys:
