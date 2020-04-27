@@ -48,7 +48,7 @@ properties:
       $ref: "_terms.yaml#/age"
     description: >
       Age at last visit. Age is encoded as ISO8601 duration. (CMG, CCDG, GTEx)
-    type: string
+    type: integer
 
   age_at_last_observation:
     description: >
