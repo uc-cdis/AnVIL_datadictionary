@@ -1245,13 +1245,6 @@ properties:
       harmonization unit for carotid_stenosis
     type: string
 
-  unit_carotid_stenosis:
-    description: >
-      Presence or absence of carotid plaque.
-    enum:
-      - "Plaque not present"
-      - "Plaque not present Plaque present"
-
   carotid_plaque:
     description: >
       Presence or absence of carotid plaque.

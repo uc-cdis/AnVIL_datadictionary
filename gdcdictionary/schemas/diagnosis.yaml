@@ -142,11 +142,6 @@ properties:
       $ref: "_terms.yaml#/morphology"
     type: string
 
-  prior_testing:
-    description: >
-      Prior testing information. (CMG)
-    type: string
-
   vital_status:
     term:
       $ref: "_terms.yaml#/vital_status"

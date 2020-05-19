@@ -45,6 +45,7 @@ required:
   - data_category
   - data_type
   - data_format
+  - file_size
 
 uniqueKeys:
   - [ id ]

@@ -78,11 +78,6 @@ properties:
       Free text description of any additional consanguinity details. (CMG)
     type: string
 
-  pedigree_image:
-    description: >
-      Bucket file reference to pedigree image. (CMG)
-    type: string
-
   family_history:
     description: >
       Flag if there is a known family history for the phenotype (useful if only proband sequenced but extended family history suggestion mode of inheritance was reported). (CMG)

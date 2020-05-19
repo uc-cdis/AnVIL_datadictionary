@@ -147,11 +147,6 @@ properties:
       - Diagnosis
       - First Patient Visit
 
-  transplanted_organ:
-    description: >
-      If the Donor was an Organ Donor, which Organs were donated.
-    type: string
-
   consent_group:
     description: >
         Data Use Restrictions that are used to indicate restrictions for datasets. (CMG) \n
@@ -169,7 +164,6 @@ properties:
     description: >
       The study subgroup that the participant belongs to. This indicates whether the participant was a postmortem donor, an organ donor, or a surgical donor. (GTEx)
     type: string
-
 
   transplanted_organ:
     description: >
