@@ -153,11 +153,6 @@ properties:
       - "not reported"
       - "not allowed to collect"
 
-  weight:
-    term:
-      $ref: "_terms.yaml#/weight"
-    type: number
-
   bmi:
     term:
       $ref: "_terms.yaml#/bmi"
