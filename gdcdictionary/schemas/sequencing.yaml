@@ -107,3 +107,8 @@ properties:
       - RNA-Seq
       - WES
       - WGS
+
+  samples:
+    $ref: "_definitions.yaml#/to_many"
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"
