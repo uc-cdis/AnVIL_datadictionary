@@ -127,8 +127,6 @@ properties:
       - Age at sample taken
 
   age_value:
-    term:
-      $ref: "_terms.yaml#/age/common"
     description: >-
       Available age value.
     type: integer
@@ -1510,8 +1508,6 @@ properties:
     minimum: 1
 
   sex:
-    term:
-      $ref: "_terms.yaml#/sex/common"
     description: >-
       Reported sex
     enum:
