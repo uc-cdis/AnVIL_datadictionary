@@ -139,3 +139,6 @@ properties:
       $ref: "_terms.yaml#/data_category"
     enum:
       - Sequencing 
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"
