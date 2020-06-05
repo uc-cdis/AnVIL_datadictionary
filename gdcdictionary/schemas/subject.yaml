@@ -22,7 +22,7 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: code
+  - name: projects
     backref: subjects
     label: describes
     target_type: project
@@ -1830,6 +1830,6 @@ properties:
     type: integer
     maximum: 2015
     minimum: 1850
-
-  code:
-    $ref: "_definitions.yaml#/to_one"
+    
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
