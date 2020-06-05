@@ -37,6 +37,9 @@ required:
   - file_size
   - md5sum
   - samples
+  - data_type
+  - data_format
+  - data_category
 
 uniqueKeys:
   - [id]
@@ -113,11 +116,17 @@ properties:
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
-  
+    enum:
+      - VCF
+
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-  
+    enum:
+      - Sequencing 
+
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
+    enum:
+      - Sequencing 

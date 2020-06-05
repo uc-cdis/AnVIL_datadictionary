@@ -102,6 +102,13 @@ properties:
   significance:
     description: >-
       Clinical significance of variant described
+    enum:
+      - Benign
+      - Likely benign
+      - Uncertain significance
+      - Suspected pathogenic
+      - Likely pathogenic
+      - Pathogenic
 
   sv_name:
     description: >-
@@ -111,7 +118,16 @@ properties:
   sv_type:
     description: >-
       Text describing Structural variant type
-
+    enum:
+      - Deletion
+      - Duplication
+      - Multiallelic CNV
+      - Insertion
+      - Inversion 
+      - Complex SVs
+      - Other
+      - Unknown
+      
   transcript:
     description: >-
       Text description of transcript

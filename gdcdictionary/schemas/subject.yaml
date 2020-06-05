@@ -1715,11 +1715,13 @@ properties:
   unit_height:
     description: >-
       harmonization unit for height. (GTEx)
+    type: string
 
   unit_weight:
     description: >-
       harmonization unit for weight. (GTEx)
-
+    type: string
+    
   uremia_history:
     description: >-
       A clinical syndrome associated with the retention of renal waste products or
