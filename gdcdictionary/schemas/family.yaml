@@ -106,3 +106,9 @@ properties:
 
   subjects:
     $ref: "_definitions.yaml#/to_many"
+
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"

@@ -22,7 +22,13 @@ systemProperties:
   - file_state
   - error_type
 
-links: []
+links:
+  - name: samples
+    backref: sequencings
+    label: derived_from
+    target_type: sample
+    multiplicity: many_to_many
+    required: true
 
 required:
   - type
@@ -30,9 +36,6 @@ required:
   - file_name
   - file_size
   - md5sum
-  - data_category
-  - data_type
-  - data_format
   - experimental_strategy
   - samples
 
