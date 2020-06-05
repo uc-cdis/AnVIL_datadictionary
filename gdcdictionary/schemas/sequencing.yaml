@@ -1,0 +1,144 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "sequencing"
+title: sequencing
+type: object
+namespace: https://dcp.bionimbus.org/
+category: data_file
+program: '*'
+project: '*'
+description: >-
+  Data file containing sequencing information.
+additionalProperties: false
+submittable: false
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: sequencings
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: samples
+        backref: sequencings
+        label: data_from
+        target_type: sample
+        multiplicity: one_to_many
+        required: false
+
+required:
+  - type
+  - submitter_id
+  - file_name
+  - file_size
+  - md5sum
+  - samples
+  - data_type
+  - data_format
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  alignment_method:
+    description: >-
+      Alignment method used
+    type: string
+
+  analyte_type:
+    description: >-
+      Sequence data source (DNA, RNA, etc)
+    enum:
+      - DNA
+      - RNA
+
+  capture_region_bed_file:
+    description: >-
+      Capture region bed file (if applicable)
+    type: string
+
+  data_processing_pipeline:
+    description: >-
+      Data processing pipeline used
+    type: string
+
+  date_data_generation:
+    description: >-
+      Date of data generation
+    type: string
+
+  exome_capture_platform:
+    description: >-
+      Exome capture platform (if applicable)
+    type: string
+
+  functional_equivalence_standard:
+    description: >-
+      Is this a functional equivalence standard?
+    type: boolean
+
+  library_prep_kit_method:
+    description: >-
+      Library prep kit used
+    type: string
+
+  reference_genome_build:
+    description: >-
+      Reference genome used
+    type: string
+
+  seq_filename:
+    description: >-
+      sequence file name without suffix
+    type: string
+
+  sequencing_assay:
+    description: >-
+      Type of sequencing assay performed
+    enum:
+      - MEGA
+      - RNA-Seq
+      - WES
+      - WGS
+
+  samples:
+    $ref: "_definitions.yaml#/to_many"
+    
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - VCF
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - Sequencing 
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - Sequencing 
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"

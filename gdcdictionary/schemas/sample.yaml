@@ -1,18 +1,15 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
 id: "sample"
-title: Sample
+title: sample
 type: object
 namespace: https://dcp.bionimbus.org/
-category: biospecimen
+category: clinical
 program: '*'
 project: '*'
-description: >
-  Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment
-  or research purposes, including a sample obtained from a living organism or taken from the
-  biological object after halting of all its life functions. Biospecimen can contain one or more
-  components including but not limited to cellular molecules, cells, tissues, organs, body fluids,
-  embryos, and body excretory products.
+description: >-
+  Biospecimen information that links subjects to samples including sample's provider,
+  source, dbgap sample detail and so forth.
 additionalProperties: false
 submittable: true
 validators: null
@@ -24,282 +21,54 @@ systemProperties:
   - created_datetime
   - updated_datetime
 
+links:
+  - name: subjects
+    backref: samples
+    label: describes
+    target_type: subject
+    multiplicity: many_to_one
+    required: true
+
 required:
   - type
+  - subjects
   - submitter_id
-  - cases
 
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
 
-links:
-  - name: cases
-    backref: samples
-    label: derived_from
-    target_type: case
-    multiplicity: many_to_one
-    required: true
-
 properties:
+
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  autolysis_score:
-    description: >
-      Autolysis Score
-    enum:
-      - None
-      - Mild
-      - Moderate
-      - Severe
-    
   dbgap_sample_id:
-    description: >
-      Sample identifier used in dbGaP (if previously submitted). (CMG)
-    type: string
-
-  biospecimen_anatomic_site_uberon_id:
-    description: >
-      Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
-    type: string
-
-  sample_source:
-    description: >
-      Uberon Label, anatomical location as described by the Uber Anatomy Ontology (UBERON). (CMG)
+    description: >-
+      Sample identifier used in dbGaP (if previously submitted)
     type: string
 
   sample_provider:
-    description: >
-      The name of collaborator who provides the sample. (CMG) 
+    description: >-
+      The name of collaborator who provides the sample.
     enum:
-      - UW
-      - Yale
       - BH
       - Broad
+      - UW
+      - Yale
+
+  sample_source:
+    description: >-
+      Uberon Label, anatomical location as described by the Uber Anatomy Ontology
+      (UBERON).
+    type: string
 
   tissue_affected_status:
-    description: >
-      If applicable to disease, is the tissue from an affected source or an unaffected source? (CMG)
+    description: >-
+      If applicable to disease, is the tissue from an affected source or an unaffected
+      source?
     enum:
-      - "Yes"
       - "No"
+      - "Yes"
 
-  biospecimen_physical_site:
-    description: >
-      Tissue location
-    type: string
-
-  biospecimen_type:
-    description: >
-      Original material type of the collected sample
-    type: string
-
-  composition:
-    term:
-      $ref: "_terms.yaml#/composition"
-    enum:
-      - "B-lymphocyte"
-      - "Buccal Cells"
-      - "Buffy Coat"
-      - "Bone Marrow Components"
-      - "Bone Marrow Components NOS"
-      - "Control Analyte"
-      - "Cell"
-      - "Circulating Tumor Cell (CTC)"
-      - "Derived Cell Line"
-      - "EBV Immortalized"
-      - "Fibroblasts from Bone Marrow Normal"
-      - "Granulocytes"
-      - "Human Original Cells"
-      - "Lymphocytes"
-      - "Mononuclear Cells from Bone Marrow Normal"
-      - "Peripheral Blood Components NOS"
-      - "Peripheral Blood Nucleated Cells"
-      - "Pleural Effusion"
-      - "Plasma"
-      - "Peripheral Whole Blood"
-      - "Serum"
-      - "Saliva"
-      - "Sputum"
-      - "Solid Tissue"
-      - "Whole Bone Marrow"
-      - "Unknown"
-      - "Not Reported"
-      - "Not Allowed To Collect"
-
-  collection_kit:
-    description: >
-      Category or classifier of a set of responses, indicates the color of the sample collection kit
-    enum:
-      - "Aqua Kit:Organ and Tissue donation"
-      - "Green Kit: Brain donation"
-      - "Yellow Kit: Skin and Blood donation"
-
-  collection_site:
-    description: >
-      Code for BSS collection site. Indicates the site that enrolled the donor, 
-      brain subregions may have more than one site. 
-    type: string
-
-  current_weight:
-    term:
-      $ref: "_terms.yaml#/current_weight"
-    type: number
-
-  ischemic_time:
-    description: >
-      Interval between actual death, presumed death, or cross clamp application and the start of the GTEx Procedure (Unit is Minutes). (GTEx)
-    type: number
-
-  total_ischemic_time_donor:
-    description: >
-      Donor Ischemic Time. Interval between actual death, presumed death, or cross clamp application and first tissue stabilization; A single donor-level ischemic time point at which the first tissue was collected for that donor. (GTEx)
-    type: number
-
-  hours_to_sample_procurement:
-    description: >
-      Time a sample spent in the PAXgene fixative
-    type: number
-
-  freezing_method:
-    term:
-      $ref: "_terms.yaml#/freezing_method"
-    type: string
-
-  internal_notes:
-    description: >
-      Internal notes about the sample generated by the LDACC
-    type: string
-
-  is_ffpe:
-    term:
-      $ref: "_terms.yaml#/is_ffpe"
-    type: boolean
-
-  method_of_sample_procurement:
-    term:
-      $ref: "_terms.yaml#/method_of_sample_procurement"
-    enum:
-      - Abdomino-perineal Resection of Rectum
-      - Anterior Resection of Rectum
-      - Aspirate
-      - Biopsy
-      - Blood Draw
-      - Bone Marrow Aspirate
-      - Core Biopsy
-      - Cystectomy
-      - Endo Rectal Tumor Resection
-      - Endoscopic Biopsy
-      - Endoscopic Mucosal Resection (EMR)
-      - Enucleation
-      - Excisional Biopsy
-      - Fine Needle Aspiration
-      - Full Hysterectomy
-      - Gross Total Resection
-      - Hand Assisted Laparoscopic Radical Nephrectomy
-      - Hysterectomy NOS
-      - Incisional Biopsy
-      - Indeterminant
-      - Laparoscopic Biopsy
-      - Laparoscopic Partial Nephrectomy
-      - Laparoscopic Radical Nephrectomy
-      - Laparoscopic Radical Prostatectomy with Robotics
-      - Laparoscopic Radical Prostatectomy without Robotics
-      - Left Hemicolectomy
-      - Lobectomy
-      - Local Resection (Exoresection; wall resection)
-      - Lumpectomy
-      - Modified Radical Mastectomy
-      - Needle Biopsy
-      - Open Craniotomy
-      - Open Partial Nephrectomy
-      - Open Radical Nephrectomy
-      - Open Radical Prostatectomy
-      - Orchiectomy
-      - Other
-      - Other Surgical Resection
-      - Pan-Procto Colectomy
-      - Pneumonectomy
-      - Right Hemicolectomy
-      - Sigmoid Colectomy
-      - Simple Mastectomy
-      - Subtotal Resection
-      - Surgical Resection
-      - Thoracoscopic Biopsy
-      - Total Colectomy
-      - Total Mastectomy
-      - Transplant
-      - Transurethral resection (TURBT)
-      - Transverse Colectomy
-      - Tumor Resection
-      - Wedge Resection
-      - Unknown
-      - Not Reported
-      - Not Allowed To Collect
-
-  chest_incision_time:
-    description: >
-      Interval between actual death, presumed death, or cross clamp application and the time of chest incision (Unit is Minutes). (GTEx)
-    type: number
-
-  cross_clamp_time:
-    description: >
-      Timepoint at which the blood supply to the aorta for organ donor collection, or artery supplying blood to the knee for surgical collections is externally closed by a surgical clamp (Unit is Minutes). (GTEx)
-    type: number
-
-  oct_embedded:
-    term:
-      $ref: "_terms.yaml#/oct_embedded"
-    type: string
-
-  pathology_notes:
-    description: >
-      Pathology Notes, notes from PRC Report
-    type: string
-
-  preservation_method:
-    term:
-      $ref: "_terms.yaml#/preservation_method"
-    enum:
-      - Cryopreserved
-      - FFPE
-      - Fresh
-      - OCT
-      - Snap Frozen
-      - Frozen
-      - Unknown
-      - Not Reported
-      - Not Allowed To Collect
-
-  prosector_notes:
-    description: >
-      Prosector comments
-    type: string
-
-  sample_type:
-    description: >
-      Current material type of the sample as stored at the LDACC
-    enum:
-      - PAXgene Preserved tissue
-      - Fresh frozen tissue
-      - Whole blood
-      - PAXgene Preserved whole blood
-      - Pellet frozen cells
-      - DNA genomic
-      - Fresh skin punch
-
-  tissue_type:
-    term:
-      $ref: "_terms.yaml#/tissue_type"
-    enum:
-      - Tumor
-      - Normal
-      - Abnormal
-      - Peritumoral
-      - Contrived
-      - Unknown
-      - Not Reported
-      - Not Allowed To Collect
-
-  cases:
+  subjects:
     $ref: "_definitions.yaml#/to_one"
