@@ -1,0 +1,106 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "sequencing"
+title: sequencing
+type: object
+namespace: https://dcp.bionimbus.org/
+category: data_file
+program: '*'
+project: '*'
+description: >-
+  Data file containing sequencing information.
+additionalProperties: false
+submittable: false
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+  - file_state
+  - error_type
+
+links: []
+
+required:
+  - type
+  - submitter_id
+  - file_name
+  - file_size
+  - md5sum
+  - data_category
+  - data_type
+  - data_format
+  - experimental_strategy
+  - samples
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  alignment_method:
+    description: >-
+      Alignment method used
+    type: string
+
+  analyte_type:
+    description: >-
+      Sequence data source (DNA, RNA, etc)
+    enum:
+      - DNA
+      - RNA
+
+  capture_region_bed_file:
+    description: >-
+      Capture region bed file (if applicable)
+    type: string
+
+  data_processing_pipeline:
+    description: >-
+      Data processing pipeline used
+    type: string
+
+  date_data_generation:
+    description: >-
+      Date of data generation
+    type: string
+
+  exome_capture_platform:
+    description: >-
+      Exome capture platform (if applicable)
+    type: string
+
+  functional_equivalence_standard:
+    description: >-
+      Is this a functional equivalence standard?
+    type: boolean
+
+  library_prep_kit_method:
+    description: >-
+      Library prep kit used
+    type: string
+
+  reference_genome_build:
+    description: >-
+      Reference genome used
+    type: string
+
+  seq_filename:
+    description: >-
+      sequence file name without suffix
+    type: string
+
+  sequencing_assay:
+    description: >-
+      Type of sequencing assay performed
+    enum:
+      - MEGA
+      - RNA-Seq
+      - WES
+      - WGS
