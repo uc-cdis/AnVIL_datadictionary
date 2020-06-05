@@ -11,7 +11,7 @@ description: >-
   List of genomic variations captured in the sequencing data.
 additionalProperties: false
 submittable: true
-validators: '[]'
+validators: null
 
 systemProperties:
   - id
@@ -127,7 +127,7 @@ properties:
       - Complex SVs
       - Other
       - Unknown
-      
+
   transcript:
     description: >-
       Text description of transcript
