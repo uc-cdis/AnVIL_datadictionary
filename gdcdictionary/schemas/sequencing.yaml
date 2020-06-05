@@ -36,7 +36,6 @@ required:
   - file_name
   - file_size
   - md5sum
-  - experimental_strategy
   - samples
 
 uniqueKeys:
@@ -107,3 +106,18 @@ properties:
       - RNA-Seq
       - WES
       - WGS
+
+  samples:
+    $ref: "_definitions.yaml#/to_many"
+    
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+  
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+  
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"

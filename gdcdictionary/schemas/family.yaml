@@ -38,6 +38,20 @@ uniqueKeys:
   - [project_id, submitter_id]
 
 properties:
+  type:
+    enum: [ "family" ]
+
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type:
+      - string
+      - "null"
 
   consanguinity:
     description: >-
