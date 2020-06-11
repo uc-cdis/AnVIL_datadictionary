@@ -573,8 +573,10 @@ properties:
   disease_id:
     description: >-
       Concept code for disease (e.g. OMIM, Orphanet)
-    type: string
-    pattern: "(OMIM|ORPHA):[0-9]{4,6}"
+    type: array
+    items:
+      type: string
+      pattern: "(OMIM|ORPHA):[0-9]{4,6}"
 
   drink_comments:
     description: >-
@@ -1298,8 +1300,10 @@ properties:
   phenotype_present:
     description: >-
       Phenotypes present (link to concept ids in ontologies such as HPO or EBO)
-    type: string
-    pattern: "HP:[0-9]{7}"
+    type: array
+    items:
+      type: string
+      pattern: "HP:[0-9]{7}"
 
   place_of_death:
     description: >-

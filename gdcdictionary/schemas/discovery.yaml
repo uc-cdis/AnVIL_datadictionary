@@ -137,6 +137,7 @@ properties:
     description: >-
       The genome build for identifying the variant position
     type: string
+    pattern: "^GRCh"
 
   zygosity:
     description: >-

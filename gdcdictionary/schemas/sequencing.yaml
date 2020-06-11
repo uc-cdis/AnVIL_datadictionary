@@ -60,34 +60,34 @@ properties:
 
   alignment_method:
     description: >-
-      Alignment method used
+      Alignment method used.
     type: string
 
   analyte_type:
     description: >-
-      Sequence data source (DNA, RNA, etc)
+      Sequence data source (DNA, RNA, etc).
     enum:
       - DNA
       - RNA
 
   capture_region_bed_file:
     description: >-
-      Capture region bed file (if applicable)
+      Capture region bed file (if applicable).
     type: string
 
   data_processing_pipeline:
     description: >-
-      Data processing pipeline used
+      Data processing pipeline used.
     type: string
 
   date_data_generation:
     description: >-
-      Date of data generation
+      Date of data generation.
     type: string
 
   exome_capture_platform:
     description: >-
-      Exome capture platform (if applicable)
+      Exome capture platform (if applicable).
     type: string
 
   functional_equivalence_standard:
@@ -97,22 +97,23 @@ properties:
 
   library_prep_kit_method:
     description: >-
-      Library prep kit used
+      Library prep kit used.
     type: string
 
   reference_genome_build:
     description: >-
-      Reference genome used
+      Reference genome used.
     type: string
+    pattern: "^GRCh"
 
   seq_filename:
     description: >-
-      sequence file name without suffix
+      sequence file name without suffix.
     type: string
 
   sequencing_assay:
     description: >-
-      Type of sequencing assay performed
+      Type of sequencing assay performed.
     enum:
       - MEGA
       - RNA-Seq
