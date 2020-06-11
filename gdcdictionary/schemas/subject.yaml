@@ -373,6 +373,23 @@ properties:
       - Unknown
       - Young adult onset
 
+  consent:
+    description: >-
+      Consent Status. (GTEx)
+    enum:
+      - Subjects did not participate in the study, did not complete a consent document and are included only for the pedigree structure and/or genotype controls
+      - General Research Use (GRU)
+
+  subject_source:
+    description: >-
+      Source repository where subjects originate. (GTEx)
+    type: string
+
+  source_subject_id:
+    description: >-
+      Subject ID used in the Source Repository. (GTEx)
+    type: string
+
   copd_clrd_history:
     description: >-
       A chronic and progressive lung disorder characterized by the loss of elasticity
