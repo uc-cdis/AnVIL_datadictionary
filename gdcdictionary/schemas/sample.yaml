@@ -70,5 +70,33 @@ properties:
       - "No"
       - "Yes"
 
+  autolysis_score:
+    description: >-
+      Autolysis Score. (GTEx)
+    enum:
+      - "None"
+      - "Mild"
+      - "Moderate" 
+      - "Severe"
+  
+  sample_collection_kit:
+    description: >-
+      Category or classifier of a set of responses, indicates the color of the sample collection kit. (GTEx)
+    enum:
+      - "Aqua Kit: Organ and Tissue Donation"
+      - "Green Kit: Brain Donation"
+      - "Yellow Kit: Skin and Blood Donation"
+
+  bss_collection_site:
+    description: >-
+      Code for BSS collection site. (GTEx)
+    enum:
+      - 'B1', 
+      - 'B1, A1' 
+      - 'C1'
+      - 'C1, A1'
+      - 'D1'
+      - 'D1, A1'
+
   subjects:
     $ref: "_definitions.yaml#/to_one"
