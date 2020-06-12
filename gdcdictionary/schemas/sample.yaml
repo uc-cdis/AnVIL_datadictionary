@@ -428,19 +428,109 @@ properties:
       Cumulative Gap Length: Cumulative length of gap regions. (GTEx)
     type: integer
 
-  gtc_file_name:
+  gap_percentage:
     description: >-
-      Name of the genotype gtc file. (GTEx)
+      Gap Percentage: The total cumulative gap length divided by the total cumulative transcript lengths. (GTEx)
     type: number
 
-  gtc_file_name:
+  unpaired_reads:
     description: >-
-      Name of the genotype gtc file. (GTEx)
+      Unpaired Reads: number of reads lacking a pair mate. (GTEx)
+    type: integer
+
+  intronic_rate:
+    description: >-
+      Intronic Rate: The fraction of reads that map within introns. (GTEx)
+    type: number
+  
+  mapped_unique_rate_of_total:
+    description: >-
+      Mapped Unique Rate of Total: Ratio of mapping of reads that were aligned and were not duplicates to total reads. (GTEx)
     type: number
 
-  gtc_file_name:
+  expression_profiling_efficiency:
     description: >-
-      Name of the genotype gtc file. (GTEx)
+      Expression Profiling Efficiency: Ratio of exon reads to total reads. (GTEx)
+    type: number
+
+  mapped_unique:
+    description: >-
+      Mapped Unique: Number of reads that were aligned and did not have duplicate flags. (GTEx)
+    type: integer
+
+  end_2_mismatch_rate:
+    description: >-
+      End 2 Mismatch Rate: The number of End 2 bases not matching the reference divided by the total number of End 2 bases. (GTEx)
+    type: number
+
+  end_2_antisense:
+    description: >-
+      End 2 Antisense: Number of reads that were sequenced in the antisense direction. (GTEx)
+    type: integer
+
+  alternative_aligments:
+    description: >-
+      Alternative Aligments: duplicate read entries providing alternative coordinates. (GTEx)
+    type: integer
+
+  end_2_sense:
+    description: >-
+      End 2 Sense: Number of End 2 reads that were sequenced in the sense direction. (GTEx)
+    type: integer
+
+  fragment_length_mean:
+    description: >-
+      Fragment Length Mean: The fragment length is the distance between the start of an upstream read and the end of the downstream pair mate. (GTEx)
+    type: integer
+  
+  end_1_antisense:
+    description: >-
+      End 1 Antisense: Number of End 1 reads that were sequenced in the antisense direction. (GTEx)
+    type: integer
+  
+  split_reads:
+    description: >-
+      Split Reads: The number of reads that span an exon-exon boundary. (GTEx)
+    type: integer
+  
+  base_mismatch_rate:
+    description: >-
+      Base Mismatch Rate: Number of bases not matching the reference divided by the total number of bases aligned. (GTEx)
+    type: number
+
+  end_1_sense:
+    description: >-
+      End 1 Sense: Number of End 1 reads that were sequenced in the sense direction. (GTEx)
+    type: integer
+  
+  end_1_percentage_sense:
+    description: >-
+      End 1 % Sense: Percentage of intragenic End 1 reads that were sequenced in the sense direction. (GTEx)
+    type: number
+
+  end_1_mapping_rate:
+    description: >-
+      End 1 Mapping Rate: the number of End 1 mapped reads divided by the total number of End 1 reads. (GTEx)
+    type: number
+
+  number_covered_5_prime:
+    description: >-
+      Number Covered 5': The number of transcripts that have at least one read in their 5' end. (GTEx)
+    type: integer
+
+  rrna_rate:
+    description: >-
+      RRNA Rate: Ratio of all reads aligned to rRNA regions to total reads. (GTEx)
+    type: number
+
+  duplication_rate_of_mapped:
+    description: >-
+      Duplication Rate of Mapped: Duplicate reads divided by total mapped reads. (GTEx)
+    type: number
+
+  end_2_percentage_sense:
+    description: >-
+      End 2 % Sense: Percentage of intragenic End 2 reads that were sequenced in the sense direction. (GTEx)
     type: number
 
   subjects:
