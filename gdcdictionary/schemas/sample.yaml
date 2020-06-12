@@ -338,7 +338,7 @@ properties:
       Exonic Rate: The fraction of reads that map within exons. (GTEx)
     type: number
 
-  5_prime_50_base_normalization:
+  five_prime_50_base_normalization:
     description: >-
       5' 50-based normalization: 50 (this number is the value for the transcript end length parameter) refers to the definition of how many bases are considered at the end; this value is the ratio between the coverage at the 5' end and the average coverage of the full transcript, averaged over all transcripts. (GTEx)
     type: number
@@ -353,7 +353,7 @@ properties:
       Unique Rate of Mapped: Unique reads divided by all mapped reads. (GTEx)
     type: number
 
-  3_prime_50_base_normalization:
+  three_prime_50_base_normalization:
     description: >-
       3' 50-base normalization: the ratio between the coverage at the 3' end and the average coverage of the full transcript, averaged over all transcripts. (GTEx)
     type: number
