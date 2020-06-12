@@ -51,6 +51,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   abused_prescription_pill:
     description: >-
@@ -62,6 +63,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   active_encephalitis_at_death:
     description: >-
@@ -72,6 +74,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   active_meningitis_at_death:
     description: >-
@@ -82,6 +85,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   affected_status:
     description: >-
@@ -94,7 +98,7 @@ properties:
 
   age_at_ecg:
     description: >-
-      Age in years at ECG (eMERGE)
+      Age in years at ECG. (eMERGE)
     type: number
     maximum: 89
     minimum: 0
@@ -141,6 +145,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   alzheimer_history:
     description: >-
@@ -151,6 +156,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   alzheimer_or_dementia_history:
     description: >-
@@ -164,12 +170,16 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   amputation_type:
     description: >-
-      If amputated, the amputation type for leg, above the knee or below the knee.
-      (GTEx)
-    type: string
+      If amputated, the amputation type for leg, above the knee or below the knee. (GTEx)
+    enum:
+      - 'No'
+      - 'Yes'
+      - 'Not Reported'
+      - 'Unknown'
 
   ancestry:
     description: >-
@@ -187,6 +197,8 @@ properties:
       - Not Hispanic or Latino
       - Missing
       - Not Assessed
+      - CEPH
+      - Not Reported
 
   ancestry_detail:
     description: >-
@@ -202,6 +214,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   ascites_history:
     description: >-
@@ -212,6 +225,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   asthma_history:
     description: >-
@@ -221,6 +235,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   autopsy_performed_by_coroner_ME:
     description: >-
@@ -228,9 +243,13 @@ properties:
       of the body [was performed] that includes an examination of the internal organs
       and structures after dissection to determine the cause of death and the nature
       of pathological changes. (GTEx)
-    type: boolean
+    enum:
+      - 'No'
+      - 'Yes'
+      - 'Not Reported'
+      - 'Unknown'
 
-  available_death_certificate:
+  death_certificate_available:
     description: >-
       Is death certificate available? Whether the death certificate is available to
       the collection team at the time of determination of eligibility. (GTEx)
@@ -238,6 +257,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - Not Reported
 
   bacterial_infections_history:
     description: >-
@@ -248,6 +268,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   bite_from_animal_with_rabies:
     description: >-
@@ -259,6 +280,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   bmi_observation_age:
     description: >-
@@ -279,7 +301,11 @@ properties:
       Was the body refrigerated at any time before procurement? Report by the site
       procurement team on whether the Donor's body was refrigerated where refrigerated
       (temperature range of refrigeration not defined). (GTEx)
-    type: boolean
+    enum:
+      - 'No'
+      - 'Yes'
+      - 'Not Reported'
+      - 'Unknown'
 
   body_temperature:
     description: >-
@@ -321,6 +347,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   cerebrovascular_disease_history:
     description: >-
@@ -331,6 +358,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   clrd_history:
     description: >-
@@ -340,6 +368,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   cmv_total_ab:
     description: >-
@@ -348,13 +377,20 @@ properties:
       family herpesviridae, subfamily betaherpesvirinae, infecting the salivary glands,
       liver, spleen, lungs, eyes, and other organs, in which they produce characteristically
       enlarged cells with intranuclear inclusions. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   cohort:
     description: >-
       The study subgroup that the participant belongs to. This indicates whether the
       participant was a postmortem donor, an organ donor, or a surgical donor. (GTEx)
-    type: string
+    enum:
+      - 'Organ Donor (OPO)'
+      - 'Postmortem'
+      - 'Surgical Donor'
 
   congenital_status:
     description: >-
@@ -373,6 +409,23 @@ properties:
       - Unknown
       - Young adult onset
 
+  consent:
+    description: >-
+      Consent Status. (GTEx)
+    enum:
+      - Subjects did not participate in the study, did not complete a consent document and are included only for the pedigree structure and/or genotype controls
+      - General Research Use (GRU)
+
+  subject_source:
+    description: >-
+      Source repository where subjects originate. (GTEx)
+    type: string
+
+  source_subject_id:
+    description: >-
+      Subject ID used in the Source Repository. (GTEx)
+    type: string
+
   copd_clrd_history:
     description: >-
       A chronic and progressive lung disorder characterized by the loss of elasticity
@@ -386,6 +439,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   creutzfeldt_jakob_history:
     description: >-
@@ -397,6 +451,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   current_diagnosed_cancer:
     description: >-
@@ -408,11 +463,13 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   dbgap_study_id:
     description: >-
       PHS ID for study.
     type: string
+    pattern: "^phs[0-9]{6}"
 
   dbgap_subject_id:
     description: >-
@@ -457,7 +514,7 @@ properties:
 
   decade_birth:
     description: >-
-      Decade of birth (eMERGE)
+      Decade of birth。 (eMERGE)
     enum:
       - "1"
       - "2"
@@ -483,6 +540,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   denied_blood_donation:
     description: >-
@@ -493,6 +551,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   denied_blood_donation_reason:
     description: >-
@@ -514,6 +573,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   diabetes_i_history:
     description: >-
@@ -523,6 +583,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   diabetes_ii_history:
     description: >-
@@ -534,6 +595,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   dialysis_treatment:
     description: >-
@@ -545,6 +607,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   disease_description:
     description: >-
@@ -558,6 +621,7 @@ properties:
     type: array
     items:
       type: string
+      pattern: "(OMIM|ORPHA):[0-9]{4,6}"
 
   drink_comments:
     description: >-
@@ -572,7 +636,12 @@ properties:
   drink_type:
     description: >-
       Did the Donor drink. (GTEx)
-    type: string
+    enum:
+      - 'Beer'
+      - 'Wine'
+      - 'Spirits'
+      - 'Other'
+      - 'Not Reported'
 
   drink_years:
     description: >-
@@ -585,6 +654,7 @@ properties:
     enum:
       - "No"
       - "Yes"
+      - 'Unknown'
 
   drug_abuse_signs:
     description: >-
@@ -596,20 +666,29 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   ebv_igg_ab:
     description: >-
       Requested results from any local serology panel, dictated by the local institution
       (not the project). Test performed to determine the amount of immunoglobulin
       G present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   ebv_igm_ab:
     description: >-
       Requested results from any local serology panel, dictated by the local institution
       (not the project). Test performed to determine the amount of immunoglobulin
       M present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   ecg_hr:
     description: >-
@@ -665,6 +744,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   first_cause_of_death:
     description: >-
@@ -682,6 +762,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   five_years_in_europe:
     description: >-
@@ -692,6 +773,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   five_years_intravenous_drug:
     description: >-
@@ -703,6 +785,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   five_years_used_cocaine:
     description: >-
@@ -713,6 +796,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   foreign_blood_transfusion:
     description: >-
@@ -723,6 +807,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   fugal_infection_at_death:
     description: >-
@@ -733,6 +818,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   general_comments:
     description: >-
@@ -750,6 +836,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   had_non_professional_tattoos:
     description: >-
@@ -760,6 +847,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   had_professional_tattoos:
     description: >-
@@ -771,6 +859,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hardy_scale:
     description: >-
@@ -797,28 +886,44 @@ properties:
       Requested results from any local serology panel, dictated by the local institution
       (not the project). Test performed to determine the amount of Hepatitis B virus
       core antibody and the amount of immunoglobulin M present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hbcab_total:
     description: >-
       HBcAb (Total; IgG+IgM). Requested results from any local serology panel, dictated
       by the local institution (not the project). Test performed to determine the
       amount of Hepatitis B virus core antibody present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hbsab:
     description: >-
       HBsAb. Requested results from any local serology panel, dictated by the local
       institution (not the project). Test performed to determine the surface antibody
       reaction of a sample to the Hepatitis B virus. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hbsag:
     description: >-
       HBsAg. Requested results from any local serology panel, dictated by the local
       institution (not the project). Test performed to determine the presence of hepatitis
       B virus surface antigen. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hcv1_nat:
     description: >-
@@ -827,7 +932,11 @@ properties:
       strategies applied to detection of virus contamination in donor blood, specifically
       small, enveloped, positive sense single strand RNA virus in the family Flaviviridae.
       (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hcvab:
     description: >-
@@ -836,7 +945,11 @@ properties:
       small, enveloped, positive sense single strand RNA virus in the family Flaviviridae
       and protein made by B lymphocytes in response to a foreign substance (antigen).
       (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hdl:
     description: >-
@@ -856,6 +969,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   heart_disease_history:
     description: >-
@@ -866,6 +980,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   height:
     description: >-
@@ -884,6 +999,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hepatitis_b_contact:
     description: >-
@@ -895,6 +1011,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hepatitis_c_contact:
     description: >-
@@ -906,6 +1023,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   high_fever_at_death:
     description: >-
@@ -916,6 +1034,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hiv_ab:
     description: >-
@@ -923,7 +1042,11 @@ properties:
       local institution (not the project). Test performed using HIV antibodies produced
       by B-cells, human immunodeficiency virus (HIV) antibodies that react with HIV
       antigens. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hiv_physical_contact:
     description: >-
@@ -935,6 +1058,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hiv_plus_o_ab:
     description: >-
@@ -942,7 +1066,11 @@ properties:
       by the local institution (not the project). Test performed using HIV antibodies
       produced by B-cells, human immunodeficiency virus (HIV) antibodies that determine
       the amount of HIV-1 group O antibody present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   hiv1_nat:
     description: >-
@@ -950,7 +1078,11 @@ properties:
       local institution (not the project). Any of various amplification and detection
       strategies applied to detection of virus contamination in donor blood, specifically
       the virus isolated and recognized as the etiologic agent of AIDS. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   homosexual_male:
     description: >-
@@ -961,6 +1093,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   hours_in_refrigeration:
     description: >-
@@ -981,6 +1114,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   icd10_category_of_death:
     description: >-
@@ -1014,6 +1148,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   influenza_at_death:
     description: >-
@@ -1028,6 +1163,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   interval_to_death_first_cause:
     description: >-
@@ -1058,6 +1194,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   kidney_inflammation_history:
     description: >-
@@ -1071,6 +1208,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   last_cause_of_death:
     description: >-
@@ -1099,6 +1237,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   lymphadenopathy_history:
     description: >-
@@ -1110,6 +1249,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   manner_of_death:
     description: >-
@@ -1133,6 +1273,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   night_sweats_history:
     description: >-
@@ -1144,6 +1285,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   no_physical_activity_at_death:
     description: >-
@@ -1155,6 +1297,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   non_medical_drug_injection_history:
     description: >-
@@ -1166,6 +1309,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   non_metastatic_cancer:
     description: >-
@@ -1176,6 +1320,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   on_statins_at_time_of_lab:
     description: >-
@@ -1190,7 +1335,11 @@ properties:
       Was donor on a ventilator immediately prior to Death? (Ascertion that donor
       was assisted by a medical device that facilitates breathing immediately prior
       to death). (GTEx)
-    type: boolean
+    enum:
+      - 'No'
+      - 'Yes'
+      - 'Not Reported'
+      - 'Unknown'
 
   open_wounds_at_death:
     description: >-
@@ -1201,6 +1350,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   opportunistic_infections_history:
     description: >-
@@ -1212,6 +1362,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   osteomyelitis_history:
     description: >-
@@ -1222,6 +1373,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   paid_sexual_acts:
     description: >-
@@ -1232,6 +1384,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   parkinson_history:
     description: >-
@@ -1245,6 +1398,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   patient_disease_list:
     description: >-
@@ -1265,6 +1419,7 @@ properties:
     type: array
     items:
       type: string
+      pattern: "HP:[0-9]{7}"
 
   phenotype_description:
     description: >-
@@ -1283,6 +1438,7 @@ properties:
     type: array
     items:
       type: string
+      pattern: "HP:[0-9]{7}"
 
   place_of_death:
     description: >-
@@ -1291,8 +1447,9 @@ properties:
 
   pmid_id:
     description: >-
-      Case specific PubMed ID if applicable. (CMG)
-    type: integer
+      Case specific PubMed ID if applicable. 
+    type: string
+    pattern: "^[0-9]{8}"
 
   pneumonia_at_death:
     description: >-
@@ -1303,6 +1460,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   pneumonia_history:
     description: >-
@@ -1315,6 +1473,42 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
+
+  population:
+    description: >
+      CHB Han Chinese in Beijing, China EAS; JPT Japanese in Tokyo, Japan EAS; CHS Southern Han Chinese EAS; CDX Chinese Dai in Xishuangbanna, China EAS; KHV Kinh in Ho Chi Minh City, Vietnam EAS; CEU Utah Residents (CEPH) with Northern and Western European Ancestry EUR; TSI Toscani in Italia EUR; FIN Finnish in Finland EUR; GBR British in England and Scotland EUR; IBS Iberian Population in Spain EUR; YRI Yoruba in Ibadan, Nigeria AFR; LWK Luhya in Webuye, Kenya AFR; GWD Gambian in Western Divisions in the Gambia AFR; MSL Mende in Sierra Leone AFR; ESN Esan in Nigeria AFR; ASW Americans of African Ancestry in SW USA AFR; ACB African Caribbeans in Barbados AFR; MXL Mexican Ancestry from Los Angeles USA AMR; PUR Puerto Ricans from Puerto Rico AMR; CLM Colombians from Medellin, Colombia AMR; PEL Peruvians from Lima, Peru AMR; GIH Gujarati Indian from Houston, Texas SAS; PJL Punjabi from Lahore, Pakistan SAS; BEB Bengali from Bangladesh SAS; STU Sri Lankan Tamil from the UK SAS; ITU Indian Telugu from the UK
+    enum:
+      - "CHB"
+      - "JPT"
+      - "CHS"
+      - "CDX"
+      - "KHV"
+      - "CEU"
+      - "TSI"
+      - "FIN"
+      - "GBR"
+      - "IBS"
+      - "YRI"
+      - "LWK"
+      - "GWD"
+      - "MSL"
+      - "ESN"
+      - "ASW"
+      - "ACB"
+      - "MXL"
+      - "PUR"
+      - "CLM"
+      - "PEL"
+      - "GIH"
+      - "PJL"
+      - "BEB"
+      - "STU"
+      - "ITU"
+      - "other"
+      - "Unknown"
+      - "not reported"
+      - "not allowed to collect"     
 
   positive_blood_at_death:
     description: >-
@@ -1325,6 +1519,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   primary_history_source:
     description: >-
@@ -1349,7 +1544,11 @@ properties:
     description: >-
       PRR/VDRL. Requested results from any local serology panel, dictated by the local
       institution (not the project). A variety of serologic tests for syphilis. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   received_growth_hormones:
     description: >-
@@ -1360,6 +1559,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   received_organ_transplant:
     description: >-
@@ -1376,6 +1576,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   renal_failure_history:
     description: >-
@@ -1388,6 +1589,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   resided_northern_european_military_base:
     description: >-
@@ -1399,6 +1601,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   resident_of_state_run_group_home:
     description: >-
@@ -1409,6 +1612,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   reyes_syndrome_history:
     description: >-
@@ -1419,6 +1623,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   rheumatoid_arthritis_history:
     description: >-
@@ -1429,13 +1634,18 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   rpr:
     description: >-
       RPR. Requested results from any local serology panel, dictated by the local
       institution (not the project). Test performed to determine the antibodies produced
       by cellular damage caused by Treponema pallidum present in a sample. (GTEx)
-    type: number
+    enum:
+      - 'Negative'
+      - 'Positive'
+      - 'Indeterminate'
+      - 'Not Performed'
 
   sarcoidosis_history:
     description: >-
@@ -1446,6 +1656,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   sars_diagnosed_or_contact:
     description: >-
@@ -1456,6 +1667,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   schizophrenia_history:
     description: >-
@@ -1467,6 +1679,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   scleroderma_history:
     description: >-
@@ -1477,6 +1690,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   seizures_history:
     description: >-
@@ -1487,6 +1701,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   sepsis_at_death:
     description: >-
@@ -1497,6 +1712,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   serum_total_cholesterol:
     description: >-
@@ -1529,6 +1745,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   skin_spots_history:
     description: >-
@@ -1541,6 +1758,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   smallpox_contact:
     description: >-
@@ -1551,6 +1769,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   smallpox_vaccination:
     description: >-
@@ -1561,6 +1780,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   smoke_comments:
     description: >-
@@ -1580,7 +1800,12 @@ properties:
   smoke_type:
     description: >-
       Type primarily smoked by Donor. (GTEx)
-    type: string
+    enum:
+      - 'Cigarette'
+      - 'Cigar'
+      - 'Pipe'
+      - 'Other'
+      - 'Not Reported'
 
   smoke_years:
     description: >-
@@ -1593,6 +1818,7 @@ properties:
     enum:
       - "No"
       - "Yes"
+      - "Unknown"
 
   solve_state:
     description: >-
@@ -1613,6 +1839,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   systemic_lupus_history:
     description: >-
@@ -1623,6 +1850,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   tested_hiv:
     description: >-
@@ -1634,6 +1862,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   three_months_uk_presence:
     description: >-
@@ -1645,13 +1874,17 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
-  tissue_recovery:
+  tissue_recovery_time_point_reference:
     description: >-
       Tissue Recovery Time Point Reference. Indicates whether the tissue ischemic
       time begins at the donor's actual death, presumed death, or when the cross clamp
       was applied in the case of surgical donors. (GTEx)
-    type: string
+    enum:
+      - 'Actual Death'
+      - 'Cross Clamp Applied'
+      - 'Presumed Death'
 
   transplant_comments:
     description: >-
@@ -1678,6 +1911,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   unexplained_cough_history:
     description: >-
@@ -1689,6 +1923,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   unexplained_temperature_history:
     description: >-
@@ -1700,6 +1935,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   unexplained_weight_loss:
     description: >-
@@ -1711,6 +1947,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   unit_height:
     description: >-
@@ -1733,6 +1970,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   used_heroine:
     description: >-
@@ -1743,6 +1981,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   used_long_term_steroid:
     description: >-
@@ -1754,6 +1993,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   used_piercing:
     description: >-
@@ -1764,6 +2004,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   ventilator_less_than_24h:
     description: >-
@@ -1791,6 +2032,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   weight:
     description: >-
@@ -1802,7 +2044,11 @@ properties:
   witnessed_death:
     description: >-
       Whether the death was observed by a witness. (GTEx)
-    type: boolean
+    enum:
+      - 'No'
+      - 'Yes'
+      - 'Not Reported'
+      - 'Unknown'
 
   wnv_contact:
     description: >-
@@ -1814,6 +2060,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   wnv_history:
     description: >-
@@ -1825,6 +2072,7 @@ properties:
       - "No"
       - Unknown
       - "Yes"
+      - 'Not Reported'
 
   year_birth:
     description: >-
