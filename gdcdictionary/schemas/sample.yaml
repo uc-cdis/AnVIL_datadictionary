@@ -177,6 +177,271 @@ properties:
       - 'Uterus'
       - 'Vagina'
   
+  prosector_comments:
+    description: >-
+      Prosector Comments. (GTEx)
+    type: string
   
+  tissue_type_detail:
+    description: >-
+      Tissue Type, more specific detail of tissue type. (GTEx)
+    enum:
+      - 'Adipose - Subcutaneous'
+      - 'Adipose - Visceral (Omentum)'
+      - 'Adrenal Gland'
+      - 'Artery - Aorta'
+      - 'Artery - Coronary'
+      - 'Artery - Tibial'
+      - 'Bladder'
+      - 'Brain - Amygdala'
+      - 'Brain - Anterior cingulate cortex (BA24)'
+      - 'Brain - Caudate (basal ganglia)'
+      - 'Brain - Cerebellar Hemisphere'
+      - 'Brain - Cerebellum'
+      - 'Brain - Cortex'
+      - 'Brain - Frontal Cortex (BA9)'
+      - 'Brain - Hippocampus'
+      - 'Brain - Hypothalamus'
+      - 'Brain - Nucleus accumbens (basal ganglia)'
+      - 'Brain - Putamen (basal ganglia)'
+      - 'Brain - Spinal cord (cervical c-1)'
+      - 'Brain - Substantia nigra'
+      - 'Breast - Mammary Tissue'
+      - 'Cervix - Ectocervix'
+      - 'Cervix - Endocervix'
+      - 'Colon - Transverse'
+      - 'Esophagus - Mucosa'
+      - 'Esophagus - Muscularis'
+      - 'Fallopian Tube'
+      - 'Heart - Atrial Appendage'
+      - 'Heart - Left Ventricle'
+      - 'Kidney - Cortex'
+      - 'Kidney - Medulla'
+      - 'Liver'
+      - 'Lung'
+      - 'Muscle - Skeletal'
+      - 'Nerve - Tibial'
+      - 'Ovary'
+      - 'Pancreas'
+      - 'Pituitary'
+      - 'Prostate'
+      - 'Skin - Not Sun Exposed (Suprapubic)'
+      - 'Skin - Sun Exposed (Lower leg)'
+      - 'Spleen'
+      - 'Stomach'
+      - 'Testis'
+      - 'Thyroid'
+      - 'Transformed fibroblasts'
+      - 'Uterus'
+      - 'Vagina'
+      - 'Whole Blood'
+    
+  total_ischemic_time:
+    description: >-
+      Total Ischemic time for a sample. (GTEx)
+    type: integer
+
+  paxgene_time:
+    description: >-
+      Time a sample spent in the PAXgene fixative. (GTEx)
+    type: integer
+
+  nucleic_acid_isolation_batch_id:
+    description: >-
+      Nucleic Acid Isolation Batch ID. (GTEx)
+    type: string
+  
+  nucleic_acid_isolation_batch_type:
+    description: >-
+      Type of nucleic acid isolation batch. (GTEx)
+    type: string
+
+  date_nucleic_acid_isolation:
+    description: >-
+      Date of nucleic acid isolation batch. (GTEx)
+    type: string
+
+  genotype_expression_batch_id:
+    description: >-
+      Genotype or Expression Batch ID. (GTEx)
+    type: string
+
+  date_genotype_expression:
+    description: >-
+      Date of genotype or expression batch. (GTEx)
+    type: string
+
+  genotype_expression_batch_type:
+    description: >-
+      Type of genotype or expression batch. (GTEx)
+    type: string
+
+  analyte_type:
+    description: >-
+      Analyte Type. (GTEx)
+    enum:
+      - 'DNA:DNA Genomic'
+      - 'RNA:Total RNA'
+    
+  flagged_for_removal:
+    description: >-
+      Samples flagged for removal from analysis. (GTEx)
+    type: string
+
+  flagged_sample_remarks:
+    description: >-
+      Additional remarks about flagged samples. (GTEx)
+    type: string
+
+  analysis_freeze:
+    description: >-
+      Samples included in the GTEx Analysis Freeze. (GTEx)
+    enum:
+      - 'EXCLUDE'
+      - 'OMNI'
+      - 'RNASEQ'
+      - 'WES'
+      - 'WGS'
+
+  gtc_file_name:
+    description: >-
+      Name of the genotype gtc file. (GTEx)
+    type: string
+
+  end_2_mapping_rate:
+    description: >-
+      End 2 Mapping Rate: the number of End 2 mapped reads divided by the total number of End 1 reads. (GTEx)
+    type: number
+
+  chimeric_pairs:
+    description: >-
+      Chimeric Pairs: Pairs whose mates map to different genes. (GTEx)
+    type: integer
+
+  intragenic_rate:
+    description: >-
+      Intragenic Rate: The fraction of reads that map within genes (within introns or exons). (GTEx)
+    type: number
+
+  number_of_gaps:
+    description: >-
+      Number of Gaps: Number of regions with >=5 bases with zero coverage. (GTEx)
+    type: integer
+
+  mapping_rate:
+    description: >-
+      Mapping Rate: Ratio of total mapped reads to total reads. (GTEx)
+    type: number
+
+  exonic_rate:
+    description: >-
+      Exonic Rate: The fraction of reads that map within exons. (GTEx)
+    type: number
+
+  5_prime_50_base_normalization:
+    description: >-
+      5' 50-based normalization: 50 (this number is the value for the transcript end length parameter) refers to the definition of how many bases are considered at the end; this value is the ratio between the coverage at the 5' end and the average coverage of the full transcript, averaged over all transcripts. (GTEx)
+    type: number
+
+  gene_detected:
+    description: >-
+      Genes Detected: Total number of genes with at least 5 exon mapping reads. (GTEx)
+    type: string
+
+  unique_rate_of_mapped:
+    description: >-
+      Unique Rate of Mapped: Unique reads divided by all mapped reads. (GTEx)
+    type: number
+
+  3_prime_50_base_normalization:
+    description: >-
+      3' 50-base normalization: the ratio between the coverage at the 3' end and the average coverage of the full transcript, averaged over all transcripts. (GTEx)
+    type: number
+
+  read_length:
+    description: >-
+      Read Length: maximum detected read length found. (GTEx)
+    type: integer
+
+  mean_coverage_per_base:
+    description: >-
+      Mean Coverage Per Base: Coverage is averaged per base across each transcript, and averaged again across all transcripts. (GTEx)
+    type: number
+
+  end_1_mismatch_rate:
+    description: >-
+      End 1 Mismatch Rate: The number of End 1 bases not matching the reference divided by the total number of End 1 bases. (GTEx)
+    type: number
+
+  fragment_length_stddev:
+    description: >-
+      Fragment Length StdDev: The fragment length is the distance between the start of an upstream read and the end of the downstream pair mate. (GTEx)
+    type: integer
+
+  estimated_library_size:
+    description: >-
+      Estimated library size: Number of expected fragments based on the total reads and duplication rate assuming a Poisson distribution. (GTEx)
+    type: integer
+
+  mapped:
+    description: >-
+      Mapped: Total number of reads aligned/mapped. (GTEx)
+    type: integer
+
+  intergenic_rate:
+    description: >-
+      Intergenic Rate: The fraction of reads that map to the genomic space between genes. (GTEx)
+    type: number
+
+  rrna:
+    description: >-
+      RRNA: Number of all reads (duplicate and non-duplicate) aligning to ribosomal RNA regions. (GTEx)
+    type: integer
+
+  total_reads:
+    description: >-
+      Total: Total reads (filtered to exclude reads with vendor fail or alternative alignment flags). (GTEx)
+    type: integer
+
+  failed_vendor_qc_check:
+    description: >-
+      Failed Vendor QC Check: reads having been designated as failed by the sequencer. (GTEx)
+    type: integer
+
+  mean_coefficient_of_variation:
+    description: >-
+      Mean coefficient of variation: standard deviation in base coverage divided by mean coverage. (GTEx)
+    type: number
+
+  transcripts_detected:
+    description: >-
+      Transcripts Detected: Total number of transcripts with at least 5 exon mapping reads. (GTEx)
+    type: integer
+
+  mapped_pairs:
+    description: >-
+      Mapped Pairs:Total number of pairs for which both ends map. (GTEx)
+    type: integer
+
+  cumulative_gap_length:
+    description: >-
+      Cumulative Gap Length: Cumulative length of gap regions. (GTEx)
+    type: integer
+
+  gtc_file_name:
+    description: >-
+      Name of the genotype gtc file. (GTEx)
+    type: number
+
+  gtc_file_name:
+    description: >-
+      Name of the genotype gtc file. (GTEx)
+    type: number
+
+  gtc_file_name:
+    description: >-
+      Name of the genotype gtc file. (GTEx)
+    type: number
+
   subjects:
     $ref: "_definitions.yaml#/to_one"
