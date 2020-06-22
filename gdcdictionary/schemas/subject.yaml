@@ -1727,7 +1727,7 @@ properties:
     description: >-
       Reported sex
     enum:
-      - female
+      - Female
       - Intersex
       - Male
       - Other
