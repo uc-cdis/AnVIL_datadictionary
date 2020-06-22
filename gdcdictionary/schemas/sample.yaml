@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "sample"
 title: sample
 type: object
-namespace: https://dcp.bionimbus.org/
+namespace: https://gen3.theanvil.io
 category: clinical
 program: '*'
 project: '*'
