@@ -987,7 +987,7 @@ properties:
       Subject's height at enrollment (eMERGE, GTEx)
     type: number
     maximum: 250
-    minimum: 50
+    minimum: 0
 
   hemophilia_history:
     description: >-
