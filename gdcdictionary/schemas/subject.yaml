@@ -186,7 +186,7 @@ properties:
       Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions
       (NOT-OD-15-089).
     enum:
-      - American Indian or Alaskan Native
+      - American Indian or Alaska Native
       - Asian
       - Black or African American
       - Hispanic or Latino
