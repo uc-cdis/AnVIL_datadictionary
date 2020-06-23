@@ -623,6 +623,11 @@ properties:
       type: string
       pattern: "(OMIM|ORPHA):[0-9]{4,6}"
 
+  drink_number:
+    description: >-
+      Units of drink consumed during Drink Period (DRNKPRD). (GTEx)
+    type: number
+
   drink_comments:
     description: >-
       Comments about drinking status of Donor. (GTEx)
