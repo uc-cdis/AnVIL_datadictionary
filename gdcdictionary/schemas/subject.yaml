@@ -186,7 +186,7 @@ properties:
       Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions
       (NOT-OD-15-089).
     enum:
-      - American Indian or Alaskan Native
+      - American Indian or Alaska Native
       - Asian
       - Black or African American
       - Hispanic or Latino
@@ -622,6 +622,11 @@ properties:
     items:
       type: string
       pattern: "(OMIM|ORPHA):[0-9]{4,6}"
+
+  drink_number:
+    description: >-
+      Units of drink consumed during Drink Period (DRNKPRD). (GTEx)
+    type: number
 
   drink_comments:
     description: >-
@@ -2076,10 +2081,39 @@ properties:
 
   year_birth:
     description: >-
-      Year of Birth (eMERGE)
+      Year of Birth. (eMERGE)
     type: integer
     maximum: 2015
     minimum: 1850
+
+  ischemic_time:
+    description: >-
+      Ischemic Time. (GTEx)
+    type: string
     
+  ischemic_time_in_minutes:
+    description: >-
+      Ischemic Time (Minutes). (GTEx)
+    type: number
+    
+  chest_incision_time:
+    description: >-
+      Time of Chest Incision. (GTEx)
+    type: string
+    
+  chest_incision_time_in_minutes:
+    description: >-
+      Time of Chest Incision (Minutes). (GTEx)
+    type: number
+  
+  cross_clamp_applied_time:
+    description: >-
+      Time Cross Clamp Applied. (GTEx)
+    type: string
+    
+  cross_clamp_applied_time_in_minutes:
+    description: >-
+      Time Cross Clamp Applied (Minutes). (GTEx)
+    type: number
   projects:
     $ref: "_definitions.yaml#/to_one_project"
