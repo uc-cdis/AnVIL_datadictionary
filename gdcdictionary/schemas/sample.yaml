@@ -98,6 +98,7 @@ properties:
       - 'C1, A1'
       - 'D1'
       - 'D1, A1'
+      - 'C1, B1, A1'
 
   current_material_type:
     description: >-
@@ -116,6 +117,12 @@ properties:
       - 'Tissue:Fresh Frozen Tissue'
       - 'Tissue:Fresh Tissue'
       - 'Whole Blood:Whole Blood'
+      - 'Tissue:Fresh Skin Punch'
+      - 'Whole Blood:PAXgene Preserved'
+      - 'Whole Blood:Whole Blood Fresh'
+      - 'Tissue:Fixed Tissue'
+      - 'Tissue:PAXgene Preserved'
+      - 'Whole Blood:Blood Cells'
 
   internal_notes_ldacc:
     description: >-
