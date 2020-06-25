@@ -127,6 +127,22 @@ properties:
       $ref: "_terms.yaml#/data_format"
     enum:
       - VCF
+      - Histology SVS file
+      - Auxiliary tab file
+      - Junction file
+      - txt
+      - tsv
+      - xlsx
+      - bam
+      - bai
+      - fastq
+      - bigWig
+      - crai
+      - cram
+      - bed
+      - bim
+      - fam
+      - pdf
 
   data_type:
     term:
@@ -176,6 +192,8 @@ properties:
     enum:
       - 'DNA:DNA Genomic'
       - 'RNA:Total RNA'
+      - 'Tissue:Fresh Frozen Tissue'
+      - 'DNA:DNA Somatic'
     
   flagged_for_removal:
     description: >-
@@ -240,7 +258,7 @@ properties:
   gene_detected:
     description: >-
       Genes Detected: Total number of genes with at least 5 exon mapping reads. (GTEx)
-    type: string
+    type: integer
 
   unique_rate_of_mapped:
     description: >-
