@@ -36,7 +36,7 @@ links:
         backref: sequencings
         label: data_from
         target_type: sample
-        multiplicity: one_to_many
+        multiplicity: many_to_many
         required: false
 
 required:
