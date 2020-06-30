@@ -459,3 +459,6 @@ properties:
     
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_many"
+  
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
