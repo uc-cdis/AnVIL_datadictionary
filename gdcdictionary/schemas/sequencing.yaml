@@ -150,6 +150,7 @@ properties:
       - bim
       - fam
       - pdf
+      - idat
 
   data_type:
     term:
@@ -161,7 +162,11 @@ properties:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - Sequencing 
+      - sequencing reads
+      - simple nucleotide variation
+      - transcriptome profiling
+      - annotation
+      - histology
 
   nucleic_acid_isolation_batch_id:
     description: >-
