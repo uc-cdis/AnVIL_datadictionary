@@ -156,17 +156,25 @@ properties:
     term:
       $ref: "_terms.yaml#/data_type"
     enum:
-      - Sequencing 
+      - Aligned Reads
+      - Unaligned Reads
+      - Annotated Mutation
+      - Allele Specific Expression
+      - Junction Files
+      - Haplotype Phasing
+      - Histology
+      - Clinical Supplement
+      - Transcriptome Expression
 
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - sequencing reads
-      - simple nucleotide variation
-      - transcriptome profiling
-      - annotation
-      - histology
+      - Sequencing Reads
+      - Simple Nucleotide Variation
+      - Transcriptome Profiling
+      - Clinical
+      - Imaging
 
   nucleic_acid_isolation_batch_id:
     description: >-
