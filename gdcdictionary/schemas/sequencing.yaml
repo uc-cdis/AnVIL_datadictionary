@@ -38,6 +38,12 @@ links:
         target_type: sample
         multiplicity: many_to_many
         required: false
+      - name: projects
+        backref: sequencings
+        label: data_from
+        target_type: project
+        multiplicity: many_to_one
+        required: false
 
 required:
   - type
@@ -130,6 +136,7 @@ properties:
       - Histology SVS file
       - Auxiliary tab file
       - Junction file
+      - tbi
       - txt
       - tsv
       - xlsx
@@ -143,18 +150,31 @@ properties:
       - bim
       - fam
       - pdf
+      - idat
 
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
     enum:
-      - Sequencing 
+      - Aligned Reads
+      - Unaligned Reads
+      - Annotated Mutation
+      - Allele Specific Expression
+      - Junction Files
+      - Haplotype Phasing
+      - Histology
+      - Clinical Supplement
+      - Transcriptome Expression
 
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - Sequencing 
+      - Sequencing Reads
+      - Simple Nucleotide Variation
+      - Transcriptome Profiling
+      - Clinical
+      - Imaging
 
   nucleic_acid_isolation_batch_id:
     description: >-
@@ -447,3 +467,6 @@ properties:
     
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_many"
+  
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
