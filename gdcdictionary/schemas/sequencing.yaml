@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
 id: "sequencing"
-title: sequencing
+title: Sequencing
 type: object
 namespace: https://gen3.theanvil.io
 category: data_file
@@ -151,6 +151,8 @@ properties:
       - fam
       - pdf
       - idat
+      - svs
+      - tab
 
   data_type:
     term:
@@ -165,6 +167,7 @@ properties:
       - Histology
       - Clinical Supplement
       - Transcriptome Expression
+      - Variants Annotation
 
   data_category:
     term:
@@ -175,6 +178,7 @@ properties:
       - Transcriptome Profiling
       - Clinical
       - Imaging
+      - Supplemental      
 
   nucleic_acid_isolation_batch_id:
     description: >-
