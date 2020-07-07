@@ -174,7 +174,7 @@ properties:
       $ref: "_terms.yaml#/data_category"
     enum:
       - Sequencing Reads
-      - Simple Nucleotide Variation
+      - Single Nucleotide Variation
       - Transcriptome Profiling
       - Clinical
       - Imaging
