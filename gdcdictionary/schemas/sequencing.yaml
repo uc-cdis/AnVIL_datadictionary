@@ -175,6 +175,7 @@ properties:
     enum:
       - Sequencing Reads
       - Single Nucleotide Variation
+      - Simple Nucleotide Variation
       - Transcriptome Profiling
       - Clinical
       - Imaging
