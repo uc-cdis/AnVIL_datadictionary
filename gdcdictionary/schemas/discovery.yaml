@@ -78,17 +78,19 @@ properties:
   inheritance_description:
     description: >-
       Text describing innheritance model
-    enum:
-      - Autosomal dominant
-      - Autosomal recessive (compound heterozygous)
-      - Autosomal recessive (homozygous)
-      - Contiguous gene syndrome
-      - Mitochondrial
-      - Somatic mosaicism
-      - Unknown/Other
-      - X-linked
-      - Y-linked
-      - de novo
+    type: array
+    items:
+      type: enum
+       - Autosomal dominant
+       - Autosomal recessive (compound heterozygous)
+       - Autosomal recessive (homozygous)
+       - Contiguous gene syndrome
+       - Mitochondrial
+       - Somatic mosaicism
+       - Unknown/Other
+       - X-linked
+       - Y-linked
+       - de novo
 
   pos:
     description: >-
