@@ -63,7 +63,8 @@ properties:
       - Known
       - Tier 1 - Candidate
       - Tier 2 - Candidate
-
+      - Unknown
+      
   hgvsc:
     description: >-
       HGVS c. description
