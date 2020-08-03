@@ -63,7 +63,8 @@ properties:
       - Known
       - Tier 1 - Candidate
       - Tier 2 - Candidate
-
+      - Unknown
+      
   hgvsc:
     description: >-
       HGVS c. description
@@ -77,17 +78,19 @@ properties:
   inheritance_description:
     description: >-
       Text describing innheritance model
-    enum:
-      - Autosomal dominant
-      - Autosomal recessive (compound heterozygous)
-      - Autosomal recessive (homozygous)
-      - Contiguous gene syndrome
-      - Mitochondrial
-      - Somatic mosaicism
-      - Unknown/Other
-      - X-linked
-      - Y-linked
-      - de novo
+    type: array
+    items:
+      enum:
+        - Autosomal dominant
+        - Autosomal recessive (compound heterozygous)
+        - Autosomal recessive (homozygous)
+        - Contiguous gene syndrome
+        - Mitochondrial
+        - Somatic mosaicism
+        - Unknown/Other
+        - X-linked
+        - Y-linked
+        - de novo
 
   pos:
     description: >-
