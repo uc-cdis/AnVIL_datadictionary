@@ -1405,6 +1405,11 @@ properties:
       - "Yes"
       - 'Not Reported'
 
+  participant_id:
+    description: >-
+      Unique identifier that can be used to retrieve more information for a participant.
+    type: string
+
   patient_disease_list:
     description: >-
       A priori list of disease uploaded by site to the CSG prior to sequencing (eMERGE)

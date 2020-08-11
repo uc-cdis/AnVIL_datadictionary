@@ -90,6 +90,11 @@ properties:
       Date of data generation.
     type: string
 
+  experimental_strategy:
+    description: >-
+      The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.
+    type: string
+
   exome_capture_platform:
     description: >-
       Exome capture platform (if applicable).

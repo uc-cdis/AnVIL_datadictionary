@@ -184,3 +184,13 @@ properties:
     description: >-
       The description for the project.
     type: string    
+
+  study_registration:
+    description: >-
+      External source from which the identifier included in study_id originates
+    type: string
+    
+  study_id:
+    description: >-
+      Unique identifier that can be used to retrieve more information for a study
+    type: string

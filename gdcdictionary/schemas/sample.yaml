@@ -192,6 +192,11 @@ properties:
       Prosector Comments. (GTEx)
     type: string
   
+  specimen_id:
+    description: >-
+      Unique identifier that can be used to retrieve more information for a specimen.
+    type: string
+
   tissue_type_detail:
     description: >-
       Tissue Type, more specific detail of tissue type. (GTEx)
