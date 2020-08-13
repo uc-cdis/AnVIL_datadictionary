@@ -1545,9 +1545,9 @@ properties:
       Text description of any genetic testing for individual conducted prior to enrollment
     type: string
 
-  project_id:
+  anvil_project_id:
     description: >-
-      Information field about project/cohort.
+      Information field about project/cohort (original name is project_id).
     type: string
 
   prr_vdrl:
