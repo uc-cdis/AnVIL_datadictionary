@@ -1429,7 +1429,7 @@ properties:
     type: array
     items:
       type: string
-      pattern: "HP:[0-9]{7}"
+      pattern: "HP:[0-9]{2}"
 
   phenotype_description:
     description: >-
@@ -1448,7 +1448,7 @@ properties:
     type: array
     items:
       type: string
-      pattern: "HP:[0-9]{7}"
+      pattern: "HP:[0-9]{2}"
 
   place_of_death:
     description: >-
