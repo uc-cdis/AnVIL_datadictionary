@@ -168,7 +168,9 @@ properties:
   authz:
     description: >-
       The authz string (example, ["/programs/Program.name/projects/Project.code"] ).
-    type: string
+    type: array
+    items:
+      type: string
         
   short_name:
     description: >-
