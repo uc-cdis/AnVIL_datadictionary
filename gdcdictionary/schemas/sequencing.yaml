@@ -158,6 +158,7 @@ properties:
       - idat
       - svs
       - tab
+      - gds
 
   data_type:
     term:
