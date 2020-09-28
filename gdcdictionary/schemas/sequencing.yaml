@@ -165,6 +165,7 @@ properties:
       $ref: "_terms.yaml#/data_type"
     enum:
       - Aligned Reads
+      - Analysis Supplement
       - Unaligned Reads
       - Annotated Mutation
       - Allele Specific Expression
@@ -179,6 +180,7 @@ properties:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
+      - Analysis
       - Sequencing Reads
       - Single Nucleotide Variation
       - Simple Nucleotide Variation
