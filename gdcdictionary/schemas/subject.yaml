@@ -89,12 +89,17 @@ properties:
 
   affected_status:
     description: >-
-      Indicate affected status of individual.
+      Indicate affected status of individual. (CMG, CCDG)
     enum:
       - Affected
       - Possibly affected
       - Unaffected
       - Unknown
+
+  affected_status_detail:
+    description: >-
+      Detail, such as subtype, regarding affected status. (CMG, CCDG)
+    type: string
 
   age_at_ecg:
     description: >-
@@ -119,7 +124,22 @@ properties:
 
   age_of_onset:
     description: >-
-      Age of onset (if affected with non-congenital disorder)
+      Age of onset (if affected with non-congenital disorder). (CMG, CCDG)
+    type: integer
+
+  age_baseline:
+    description: >-
+      Age at baseline. (CCDG)
+    type: integer
+
+  age_unspecified:
+    description: >-
+      Age as given by study, but unspecified as to when. Most likely corresponds to age at the only visit. (CCDG)
+    type: integer
+
+  age_at_dna_collection:
+    description: >-
+      Age at DNA collection. (CCDG)
     type: integer
 
   age_type:
@@ -426,6 +446,16 @@ properties:
       Subject ID used in the Source Repository. (GTEx)
     type: string
 
+  study_nickname:
+    description: >-
+      Study nickname as given in http://tiny.cc/CCDG_CohortConsents. (CCDG)
+    type: string
+
+  sequencing_center:
+    description: >-
+      Name of CCDG center. (CCDG)
+    type: string
+
   copd_clrd_history:
     description: >-
       A chronic and progressive lung disorder characterized by the loss of elasticity
@@ -612,7 +642,7 @@ properties:
   disease_description:
     description: >-
       Disease name or free text description of disease (especially if concept code
-      not available).
+      not available). (CMG, CCDG)
     type: string
 
   disease_id:

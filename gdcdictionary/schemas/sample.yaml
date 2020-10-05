@@ -49,17 +49,20 @@ properties:
 
   sample_provider:
     description: >-
-      The name of collaborator who provides the sample.
+      The name of collaborator who provides the sample. (CMG, CCDG)
     enum:
       - BH
       - Broad
       - UW
       - Yale
+      - WashU
+      - NYGC
+      - Baylor
 
   sample_source:
     description: >-
       Uberon Label, anatomical location as described by the Uber Anatomy Ontology
-      (UBERON).
+      (UBERON). (CMG, CCDG)
     type: string
     pattern: "^UBERON:[0-9]{7}"
 
