@@ -138,9 +138,8 @@ properties:
       $ref: "_terms.yaml#/data_format"
     enum:
       - VCF
-      - Histology SVS file
-      - Auxiliary tab file
-      - Junction file
+      - svs
+      - junc
       - tbi
       - txt
       - tsv
