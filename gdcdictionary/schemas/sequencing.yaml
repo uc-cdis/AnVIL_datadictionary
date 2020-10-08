@@ -138,7 +138,6 @@ properties:
       $ref: "_terms.yaml#/data_format"
     enum:
       - VCF
-      - svs
       - junc
       - tbi
       - txt
