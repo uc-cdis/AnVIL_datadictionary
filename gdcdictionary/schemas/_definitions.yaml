@@ -96,6 +96,17 @@ file_format:
     term:
         $ref: "_terms.yaml#/file_format"
 
+file_type:
+    type: string
+    term:
+        $ref: "_terms.yaml#/file_type" 
+
+file_md5sum:
+    type: string
+    term:
+        $ref: "_terms.yaml#/file_md5sum"
+    pattern: "^[a-f0-9]{32}$"
+
 ga4gh_drs_uri:
     type: string
     term:
