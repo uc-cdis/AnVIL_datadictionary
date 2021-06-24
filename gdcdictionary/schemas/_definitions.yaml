@@ -227,6 +227,10 @@ data_file_properties:
     $ref: "#/data_file_error_type"
   ga4gh_drs_uri:
     $ref: "#/ga4gh_drs_uri"
+  file_md5sum: 
+    $ref: "#/file_md5sum"
+  file_type: 
+    $ref: "#/file_type"    
 
 workflow_properties:
   $ref: "#/ubiquitous_properties"
