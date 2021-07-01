@@ -59,26 +59,30 @@ properties:
     term:
       $ref: "_terms.yaml#/data_format"
     enum:
-      - VCF
-      - junc
-      - tbi
-      - txt
-      - tsv
-      - xlsx
-      - bam
       - bai
-      - fastq
+      - bam
+      - bed
       - bigWig
+      - bim
       - crai
       - cram
-      - bed
-      - bim
+      - csv
+      - docx
       - fam
-      - pdf
+      - fastq
+      - gds
       - idat
+      - jpg
+      - junc
+      - pdf
+      - readme
       - svs
       - tab
-      - gds
+      - tbi
+      - tsv
+      - txt
+      - VCF
+      - xlsx
 
   data_type:
     term:
