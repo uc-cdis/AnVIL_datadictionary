@@ -205,20 +205,22 @@ properties:
     description: >-
       Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions
       (NOT-OD-15-089).
-    enum:
-      - American Indian or Alaska Native
-      - Asian
-      - Black or African American
-      - Hispanic or Latino
-      - Native Hawaiian or Other Pacific Islander
-      - Other
-      - Unknown
-      - White
-      - Not Hispanic or Latino
-      - Missing
-      - Not Assessed
-      - CEPH
-      - Not Reported
+    type: array
+    items:
+      enum:
+        - American Indian or Alaska Native
+        - Asian
+        - Black or African American
+        - Hispanic or Latino
+        - Native Hawaiian or Other Pacific Islander
+        - Other
+        - Unknown
+        - White
+        - Not Hispanic or Latino
+        - Missing
+        - Not Assessed
+        - CEPH
+        - Not Reported
 
   ancestry_detail:
     description: >-
