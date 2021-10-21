@@ -226,6 +226,8 @@ properties:
     description: >-
       Additional specific ancestry description in a free text, comma delimited array.
     type: array
+    items:
+      type: string
 
   arthritis_history:
     description: >-
