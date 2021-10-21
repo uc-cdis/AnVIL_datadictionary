@@ -203,8 +203,8 @@ properties:
 
   ancestry:
     description: >-
-      Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions
-      (NOT-OD-15-089).
+      Reported ancestry defined by NIH Racial and Ethnic Categories and Definitions 
+      (NOT-OD-15-089); American Indian or Alaska Native, Asian, Black or African American, Hispanic or Latino, Native Hawaiian or Other Pacific Islander, Other, Unknown, White, Not Hispanic or Latino, Missing, Not Assessed, CEPH, Not Reported 
     type: array
     items:
       enum:
@@ -224,8 +224,8 @@ properties:
 
   ancestry_detail:
     description: >-
-      Additional specific ancestry description free text.
-    type: string
+      Additional specific ancestry description in a free text, comma delimited array.
+    type: array
 
   arthritis_history:
     description: >-
