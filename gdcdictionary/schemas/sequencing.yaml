@@ -139,6 +139,7 @@ properties:
     enum:
       - bai
       - bam
+      - bcf
       - bed
       - bigWig
       - bim
