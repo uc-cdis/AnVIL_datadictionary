@@ -70,6 +70,7 @@ properties:
       - csv
       - docx
       - fam
+      - fasta
       - fastq
       - gds
       - idat
